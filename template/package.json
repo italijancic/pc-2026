@@ -1,0 +1,26 @@
+{
+  "name": "pc-2026-template",
+  "version": "1.0.0",
+  "description": "Template de proyecto para la catedra Programacion en Computacion - UTN FRRQ 2026",
+  "type": "module",
+  "main": "src/app.js",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node --watch src/app.js",
+    "debug": "node --inspect src/app.js",
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "italijancic@comunidad.frrq.utn.edu.ar",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "globals": "^17.9.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

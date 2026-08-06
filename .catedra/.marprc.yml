@@ -1,0 +1,16 @@
+# Configuración de Marp para las clases de Programación en Computación — UTN FRRQ
+# Uso:
+#   npm run build     → PDF de todas las presentaciones
+#   npm run html      → HTML autocontenido de todas las presentaciones
+#   npm run watch     → vista previa con recarga en vivo
+#   npx marp ../unidades/07-arrays-unidimensionales/presentacion.md --pdf --allow-local-files
+
+# HTML embebido: necesario para los componentes en columnas, los paneles de
+# código con nombre de archivo y los diagramas de vector en memoria.
+html: true
+
+# Tema propio de la cátedra.
+themeSet: ./themes
+
+options:
+  looseYAML: false
