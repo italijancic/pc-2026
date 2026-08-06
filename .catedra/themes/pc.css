@@ -1,0 +1,683 @@
+/* @theme pc */
+
+/*  ══════════════════════════════════════════════════════════════════
+    Tema de la cátedra · Programación en Computación
+    UTN — Facultad Regional Reconquista
+
+    Diapositiva de 1280 × 720 px (16:9). Todas las medidas en px, para
+    que el render de Marp a PDF sea idéntico al de la vista previa.
+
+    Estructura: tokens → componentes. Nunca estilar dentro de una
+    media query; redefinir el token y dejar que el componente lo tome.
+
+    La display face es JetBrains Mono: monoespaciada sin serifa. La
+    materia es programación y el código es el contenido, así que la
+    tipografía lo dice desde el título.
+
+    NO se importa el tema `default`: hereda CSS de GitHub-markdown que
+    rompe las tablas en proyección (`display: block; overflow: auto`
+    las vuelve contenedores con scroll, y en PDF eso significa
+    recortadas).
+    ══════════════════════════════════════════════════════════════════ */
+
+/* @size 16:9 1280px 720px */
+
+:root {
+  /* neutros con sesgo frío */
+  --ground:      #F6F8FA;
+  --surface:     #FFFFFF;
+  --surface-2:   #EBEFF4;
+  --ink:         #0E1621;
+  --ink-2:       #3C4756;
+  --muted:       #6B7789;
+  --line:        #D3DAE3;
+  --line-soft:   #E5EAF0;
+
+  --accent:      #0F766E;
+  --accent-soft: #DCF2EF;
+
+  /* par semántico de la materia: así se hace / así NO se hace */
+  --sig-good:    #10715B;
+  --sig-bad:     #B3401F;
+  --sig-bad-soft:#FBEAE4;
+
+  /* panel de código: oscuro, como el editor donde escriben */
+  --code-bg:     #0E1621;
+  --code-fg:     #DDE4EC;
+  --code-line:   #223044;
+
+  /* Sin box-shadow a propósito: Chromium la rasteriza como un bloque gris
+     opaco al exportar a PDF, y en proyección no aporta nada. La separación
+     la da el contraste entre --surface y --ground más el borde. */
+
+  /* Variante NL = No Ligatures. Es deliberado: con ligaduras, `===` se dibuja
+     como `═══` y `++` como `⁺⁺`. El alumno tiene que ver EXACTAMENTE los
+     caracteres que va a tipear. */
+  --font-display: "JetBrains Mono NL", "JetBrainsMono NL", ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono NL", "JetBrainsMono NL", ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  --fs-display: 54px;
+  --fs-title:   38px;
+  --fs-lead:    26px;
+  --fs-body:    22px;
+  --fs-code:    19px;
+  --fs-small:   18px;
+  --fs-label:   15px;
+
+  --pad-x: 78px;
+  --pad-y: 52px;
+  --pad-b: 84px;          /* reserva para el pie de diapositiva */
+  --gap:   24px;
+}
+
+/* La proyección en aula y el PDF van siempre en claro.
+   El tema oscuro es sólo para leer la exportación HTML en pantalla. */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --ground:      #0B1017;
+    --surface:     #141B24;
+    --surface-2:   #1B2430;
+    --ink:         #E7ECF3;
+    --ink-2:       #B3BECC;
+    --muted:       #8391A3;
+    --line:        #2A3542;
+    --line-soft:   #202935;
+    --accent:      #5CC7BA;
+    --accent-soft: #12312D;
+    --sig-good:    #4FBF9F;
+    --sig-bad:     #E38868;
+    --sig-bad-soft:#33201A;
+    --code-bg:     #070C12;
+  }
+}
+
+/* ─────────────────────────── diapositiva ─────────────────────────── */
+
+section {
+  width: 1280px;
+  height: 720px;
+  padding: var(--pad-y) var(--pad-x) var(--pad-b);
+  display: flex;
+  flex-direction: column;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.42;
+  letter-spacing: 0;
+  overflow: hidden;
+}
+
+/* Pie: texto a la izquierda (directiva footer), número a la derecha
+   (paginate). Ambos sobre la misma línea de base, con un filete encima. */
+section::after {                        /* numeración (paginate: true) */
+  right: var(--pad-x);
+  bottom: 34px;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: .08em;
+  color: var(--muted);
+  text-shadow: none;
+}
+
+section > footer {
+  position: absolute;
+  left: var(--pad-x);
+  right: var(--pad-x);
+  bottom: 34px;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* filete que separa el pie del contenido */
+section:not(.cover):not(.chapter)::before {
+  content: "";
+  position: absolute;
+  left: var(--pad-x);
+  right: var(--pad-x);
+  bottom: 62px;
+  height: 1px;
+  background: var(--line-soft);
+}
+
+/* ───────────────────────── encabezados ───────────────────────── */
+
+.eyebrow {
+  flex: none;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+.eyebrow b { color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; }
+.eyebrow span { color: var(--line); }
+
+section h2 {
+  flex: none;
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-size: var(--fs-title);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -.028em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+section h2 em { font-style: normal; color: var(--accent); }
+section h2 code { font-size: 1em; background: none; padding: 0; color: var(--accent); }
+
+section h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  letter-spacing: -.015em;
+  color: var(--ink);
+}
+section h3 code { font-size: 1em; background: none; padding: 0; }
+
+/* ───────────────────── portada y cierre ───────────────────── */
+
+section.cover { justify-content: center; padding-bottom: var(--pad-y); }
+section.cover .rule {
+  width: 148px;
+  height: 5px;
+  background: var(--accent);
+  margin-bottom: 40px;
+}
+section.cover h1 {
+  margin: 20px 0 26px;
+  max-width: 26ch;
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -.04em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.kicker {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 15px;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+.cover-meta .sep { color: var(--line); }
+
+/* Separador de bloque temático: <!-- _class: chapter --> */
+section.chapter { justify-content: center; background: var(--ink); }
+section.chapter h2 {
+  color: var(--surface);
+  font-size: 46px;
+  margin: 0;
+  padding-left: 26px;
+  border-left: 5px solid var(--accent);
+  max-width: 30ch;
+}
+section.chapter .kicker { color: var(--accent); margin-bottom: 18px; padding-left: 31px; }
+section.chapter > footer, section.chapter::after { color: #55637A; }
+
+/* ───────────────────── cuerpo y columnas ───────────────────── */
+
+/* El cuerpo ocupa todo el alto libre que dejan el eyebrow y el título (ambos
+   con `flex: none`, anclados arriba) y centra su contenido verticalmente
+   dentro de ese espacio.
+
+   Centrado POR DEFECTO a propósito: cuando el contenido es más corto que el
+   alto disponible, alinearlo arriba deja un hueco abajo que se lee como
+   diapositiva sin terminar. Usar `.body.top` sólo cuando el orden de lectura
+   exige que arranque pegado al título. */
+.body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap);
+}
+.body.top { justify-content: flex-start; }
+.body.center { justify-content: center; }   /* explícito, por compatibilidad */
+
+.cols { display: grid; gap: var(--gap); align-items: start; }
+.cols-2   { grid-template-columns: 1fr 1fr; }
+.cols-3   { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cols-2-1 { grid-template-columns: 1.2fr .8fr; }
+.cols-1-2 { grid-template-columns: .8fr 1.2fr; }
+.cols.fill { align-items: stretch; }
+.cols > * { min-width: 0; }
+
+/* ───────────────────────── texto ───────────────────────── */
+
+.lead {
+  margin: 0;
+  max-width: 52ch;
+  font-size: var(--fs-lead);
+  line-height: 1.32;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.lead strong { color: var(--ink); font-weight: 600; }
+.lead code { font-size: .88em; }
+
+.note-p { margin: 0; font-size: var(--fs-small); color: var(--muted); max-width: 66ch; }
+.note-p strong { color: var(--ink-2); }
+
+/* declaración grande: una sola idea en la diapositiva */
+.statement {
+  margin: 0;
+  max-width: 30ch;
+  font-family: var(--font-display);
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+.after {
+  margin: 24px 0 0;
+  max-width: 46ch;
+  font-size: var(--fs-lead);
+  color: var(--accent);
+}
+
+/* ───────────────────────── listas ───────────────────────── */
+
+.bullets { margin: 0; padding: 0; list-style: none; display: grid; gap: 13px; }
+.bullets li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; }
+.bullets li > span { min-width: 0; }
+.bullets li::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  margin-top: 11px;
+  background: var(--accent);
+}
+.bullets .sub { display: block; font-size: var(--fs-small); color: var(--muted); }
+
+/* lista numerada: usar sólo cuando el orden es información */
+.enum { list-style: none; margin: 0; padding: 0; display: grid; gap: 15px; counter-reset: enum var(--enum-start, 0); }
+.enum li { display: grid; grid-template-columns: 46px 1fr; gap: 16px; align-items: baseline; }
+.enum li > span { min-width: 0; }
+.enum li::before {
+  content: counter(enum, decimal-leading-zero);
+  counter-increment: enum;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+}
+
+/* ───────────────────────── piezas ───────────────────────── */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 22px;
+  min-width: 0;
+}
+.card p { margin: 0; color: var(--ink-2); font-size: var(--fs-small); }
+.card p + p { margin-top: 10px; }
+.card--flat { background: var(--surface-2); border-color: transparent; }
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 4px;
+  padding: 5px 11px;
+}
+
+/* temario / roadmap del curso
+   <ul class="units">
+     <li><span class="n">01</span><span>Tema <span class="note">nota al pie</span></span></li>
+     <li class="is-mark">…</li>          ← resalta la unidad actual
+   </ul> */
+.units { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.units li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
+  align-items: baseline;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: var(--fs-small);
+}
+.units li:last-child { border-bottom: 0; }
+.units li > span { min-width: 0; }
+.units li > .n {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.units li.is-mark > .n { color: var(--accent); font-weight: 700; }
+.units li.is-mark { font-weight: 600; }
+.units li .note { display: block; font-size: var(--fs-label); color: var(--muted); font-weight: 400; }
+
+/* tres piezas de igual peso */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 940px;
+}
+.pillars div { border-top: 4px solid var(--accent); padding-top: 14px; }
+.pillars b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+.pillars span { display: block; margin-top: 6px; font-size: var(--fs-small); color: var(--muted); }
+
+/* ───────────────────── código ─────────────────────
+   El panel oscuro es el protagonista: es lo que van a escribir.        */
+
+section code {
+  font-family: var(--font-mono);
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  font-size: .88em;
+  background: var(--surface-2);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: var(--ink);
+}
+
+section pre {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  background: var(--code-bg);
+  border: none;
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 0;
+  font-size: var(--fs-code);
+  line-height: 1.55;
+  overflow: hidden;
+}
+section pre code {
+  background: none;
+  padding: 0;
+  font-size: 1em;
+  color: var(--code-fg);
+  text-shadow: none;
+}
+
+/* Bloque de código con nombre de archivo: <div class="file" data-name="app.js"> */
+.file { min-width: 0; }
+.file::before {
+  content: attr(data-name);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .08em;
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--line-soft);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  padding: 6px 14px;
+  width: fit-content;
+}
+.file pre { border-radius: 0 8px 8px 8px; }
+
+/* Salida de consola: <div class="out"> */
+.out { min-width: 0; }
+.out::before {
+  content: "SALIDA";
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .14em;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+.out pre {
+  background: var(--code-bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-size: var(--fs-small);
+}
+.out pre code,
+.out pre code span { color: #B9C4D2 !important; }
+
+/* Comparación así-NO / así-SÍ: <div class="cols cols-2 compare"> */
+.compare > div { min-width: 0; }
+.compare .bad, .compare .good {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare .bad  { color: var(--sig-bad); }
+.compare .good { color: var(--sig-good); }
+.compare .bad::before  { content: "✗  "; }
+.compare .good::before { content: "✓  "; }
+
+/* ───────────────── coloreado de sintaxis (highlight.js) ─────────────────
+   Se define acá porque el tema no importa `default`, que es quien traía
+   los colores. Paleta pensada para el panel oscuro.                     */
+
+pre code .hljs-keyword,
+pre code .hljs-literal { color: #C9A3F5; }
+pre code .hljs-string,
+pre code .hljs-regexp  { color: #8DDCA4; }
+pre code .hljs-number  { color: #F2B45C; }
+pre code .hljs-comment { color: #6C7C90; font-style: normal; }
+pre code .hljs-title,
+pre code .hljs-title.function_ { color: #7FC8F0; }
+pre code .hljs-built_in,
+pre code .hljs-property { color: #5FB7DE; }
+pre code .hljs-params,
+pre code .hljs-variable,
+pre code .hljs-attr { color: var(--code-fg); }
+
+/* ───────────────── diagrama de vector en memoria ─────────────────
+   <div class="mem">
+     <div><b>219</b><i>0</i></div>
+     <div class="is-mark"><b>235</b><i>1</i></div>
+   </div>
+   Evita tener que dibujar un SVG para mostrar índices y valores.      */
+
+.mem { display: flex; gap: 0; margin: 0; }
+.mem > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 92px;
+}
+.mem > div > b {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  text-align: center;
+  padding: 14px 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-right-width: 0;
+  color: var(--ink);
+}
+.mem > div:last-child > b { border-right-width: 1px; }
+.mem > div > i {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  color: var(--muted);
+  margin-top: 8px;
+}
+.mem > div.is-mark > b {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+}
+.mem > div.is-mark > i { color: var(--accent); font-weight: 700; }
+.mem > div.is-bad > b {
+  background: var(--sig-bad-soft);
+  border-color: var(--sig-bad);
+  color: var(--sig-bad);
+}
+.mem-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 9px;
+}
+
+/* ───────────────── traza de ejecución ─────────────────
+   Tabla para seguir el valor de las variables iteración por iteración.
+   Es la herramienta más útil para enseñar bucles y acumuladores.      */
+
+.trace { font-variant-numeric: tabular-nums; }
+.trace th, .trace td { font-family: var(--font-mono); }
+.trace td.is-mark { color: var(--accent); font-weight: 700; }
+
+/* ───────────────────────── avisos ───────────────────────── */
+
+.callout {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 18px 24px;
+  font-size: var(--fs-lead);
+  line-height: 1.3;
+  text-align: center;
+  text-wrap: balance;
+}
+.callout small {
+  display: block;
+  margin-top: 9px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* El error clásico que se corrige como grave en los parciales */
+.pitfall {
+  border: 1px solid var(--sig-bad);
+  background: var(--sig-bad-soft);
+  border-radius: 8px;
+  padding: 16px 22px;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+.pitfall::before {
+  content: "ERROR FRECUENTE";
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .12em;
+  color: var(--sig-bad);
+  margin-bottom: 7px;
+}
+.pitfall p { margin: 0; }
+.pitfall strong { color: var(--ink); }
+
+.tip {
+  border-left: 3px solid var(--accent);
+  padding: 2px 0 2px 18px;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+  margin: 0;
+}
+.tip strong { color: var(--ink); }
+
+/* Pregunta abierta al curso: <!-- _class: ask --> */
+section.ask { background: var(--surface-2); justify-content: center; }
+section.ask h2 { font-size: 42px; max-width: 28ch; }
+section.ask .kicker { color: var(--accent); margin-bottom: 16px; }
+
+/* ───────────────────────── tablas ───────────────────────── */
+
+section table {
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+  width: 100%;
+}
+section th, section td {
+  text-align: left;
+  padding: 9px 13px 9px 0;
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+}
+section th {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  white-space: normal;
+}
+section td { color: var(--ink-2); }
+section td strong { color: var(--ink); }
+section tbody tr:last-child td { border-bottom: none; }
+
+/* ───────────────────────── figuras ───────────────────────── */
+
+figure { margin: 0; min-width: 0; }
+figure svg { display: block; width: 100%; height: auto; }
+figure.h-sm svg { max-height: 240px; }
+figure.h-md svg { max-height: 330px; }
+figure.h-lg svg { max-height: 420px; }
+figcaption {
+  margin-top: 11px;
+  font-size: var(--fs-label);
+  color: var(--muted);
+  line-height: 1.4;
+}
+figcaption strong { color: var(--ink-2); }
+
+/* ───────────────────────── misceláneas ───────────────────────── */
+
+.scroll-x { overflow-x: auto; }
+.quiet { color: var(--muted); }
+.ph { font-style: italic; color: var(--muted); }
+
+section a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--line); }

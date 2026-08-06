@@ -1,0 +1,21 @@
+.DS_Store
+node_modules/
+
+# Derivados regenerables: se construyen con `npm run all`
+*.html
+*.pptx
+.apunte-tmp.html
+.tp-tmp.html
+
+# Los PDF de presentaciones y apuntes SI se versionan: son el entregable del
+# aula y el alumno los descarga desde GitHub sin instalar nada.
+!unidades/**/*.pdf
+
+# El package-lock.json del template SI se versiona: garantiza que los ~30 alumnos
+# instalen exactamente el mismo arbol de dependencias durante todo el cuatrimestre.
+
+# Material docente: NUNCA en este repo (va en pc-2026-docente, privado)
+soluciones/
+**/solucion.js
+**/*-solution.js
+notas.*
