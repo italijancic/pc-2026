@@ -1,0 +1,25 @@
+{
+  "name": "pc-2026-clases",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Presentaciones y apuntes de Programacion en Computacion — UTN FR Reconquista",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node tools/render.mjs --pdf",
+    "docs": "node tools/render.mjs --docs",
+    "all": "node tools/render.mjs --pdf --docs",
+    "html": "node tools/render.mjs --html",
+    "pptx": "node tools/render.mjs --pptx",
+    "links": "node tools/fix-links.mjs",
+    "watch": "marp --watch --preview",
+    "check": "node tools/check-slides.mjs",
+    "images": "marp --images png --image-scale 1 --allow-local-files"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.5.0",
+    "marked": "^16.4.0",
+    "puppeteer-core": "^24.9.0"
+  }
+}
