@@ -6,15 +6,15 @@ Autor: Iván Talijancic
 
 Para ejecutar este proyecto Template, sigue las siguientes instrucciones:
 
-1. **Descargar el código del repositorio:** [Template](https://github.com/italijancic/utn-pc-template). Asegúrate de elegir la rama correcta al descargar.
+1. **Copiá esta carpeta `template/`** a donde quieras trabajar, y renombrala (por ejemplo, `unidad-02`). Hacé **una copia por unidad**: así te queda el historial de lo que fuiste resolviendo.
 
-2. **Descomprimir el código** en la ubicación que desees en tu computadora.
+   Si todavía no clonaste el repositorio de la cátedra, podés bajarlo como ZIP desde [pc-2026](https://github.com/italijancic/pc-2026).
 
-3. **Abrir la carpeta con VSCode:** **Asegúrate de estar dentro de la carpeta raíz.** Esto es muy importante, ya que de lo contrario no podrás ejecutar el código del proyecto.
+2. **Abrí la carpeta con VSCode:** **asegurate de abrir la carpeta raíz**, la que contiene el `package.json`. Esto es muy importante: si abrís `src/`, no vas a poder ejecutar el proyecto.
 
-4. **Instalar dependencias:** Si no se han instalado las dependencias del proyecto (si no ves la carpeta `node_modules` en tu proyecto), ejecuta en tu consola `npm install`. En caso de tener dificultades con Powershell vaya a [Troubleshooting](#-troubleshooting)
+3. **Instalar dependencias:** Si no se han instalado las dependencias del proyecto (si no ves la carpeta `node_modules` en tu proyecto), ejecuta en tu consola `npm install`. En caso de tener dificultades con Powershell vaya a [Troubleshooting](#-troubleshooting)
 
-5. **Ejecutar el proyecto:** En tu consola (terminal de VSCode), ejecuta `npm run dev`.
+4. **Ejecutar el proyecto:** En tu consola (terminal de VSCode), ejecuta `npm run dev`.
 
 ## 📂 Contenido del Repositorio
 
@@ -28,8 +28,8 @@ Este archivo define la configuración del proyecto, incluyendo las dependencias,
 - **type:** Define que el proyecto usa módulos `ECMAScript`.
 - **main:** Archivo principal del proyecto (`app.js`).
 - **scripts:**
-  - `dev:` Ejecuta el archivo `app.js` en modo de observación (watch mode).
-  - `test:` Script de prueba (aún no configurado).
+  - `dev:` Ejecuta el archivo `app.js` en modo de observación (watch mode): cada vez que guardás, se vuelve a ejecutar solo.
+  - `lint:` Revisa que el código cumpla las reglas de estilo de la cátedra.
 - **author:** Autor del proyecto.
 - **license:** Licencia del proyecto.
 - **devDependencies:** Dependencias para el desarrollo, incluyendo ESLint para análisis estático del código.
@@ -60,12 +60,10 @@ Módulo que proporciona una función `prompt` para leer entradas desde la consol
 El programa pedirá el nombre del usuario y luego lo saludarán.
 
 ```javascript
-import { prompt } from "./prompt.js";
+import { prompt } from './prompt.js'
 
-const nombre = prompt("Escribe tu nombre: ");
-console.log(
-  `Hola, ${nombre}! Bienvenido al curso de Programación de Computadoras 2024 | UTN - FRRQ`
-);
+const name = prompt('¿Cómo te llamás? ')
+console.log(`Hola ${name}, bienvenido a Programación en Computación 2026 | UTN - FRRQ`)
 ```
 
 ### Leer un Número Entero
@@ -73,10 +71,8 @@ console.log(
 El programa pedirá la edad del usuario y la mostrará en consola.
 
 ```javascript
-import { prompt } from "./prompt.js";
-
-const edad = parseInt(prompt("¿Cuántos años tienes?: "));
-console.log(`${nombre} tiene ${edad} años.`);
+const age = parseInt(prompt('¿Cuántos años tenés? '))
+console.log(`${name} tiene ${age} años`)
 ```
 
 ### Leer un Número Flotante
@@ -84,11 +80,12 @@ console.log(`${nombre} tiene ${edad} años.`);
 El programa pedirá la altura del usuario en metros y la mostrará en consola.
 
 ```javascript
-import { prompt } from "./prompt.js";
-
-const altura = parseFloat(prompt("¿Cuál es tu altura en metros?: "));
-console.log(`${nombre} mide ${altura} metros.`);
+const height = parseFloat(prompt('¿Cuánto medís [m]? '))
+console.log(`${name} mide ${height.toFixed(2)} m`)
 ```
+
+> ⚠️ `prompt()` devuelve **siempre texto**. Si el dato es un número y lo vas a usar para
+> calcular, convertilo con `parseInt()` o `parseFloat()`. Si no, `20 + 5` te va a dar `205`.
 
 ## 👾 Troubleshooting
 
@@ -97,7 +94,7 @@ console.log(`${nombre} mide ${altura} metros.`);
 En caso de ejecutar el comando `npm install` en la terminal de Visual Studio Code y que esta nos devuelva el siguiente error o parecido:
 
 <figure>
-    <img src="./public/errorPowershell.webp"
+    <img src="./assets/errorPowershell.webp"
          alt="Imagen del error al ejecutar el comando npm install">
 </figure>
 

@@ -1,17 +1,16 @@
 import { prompt } from './prompt.js'
 
-// CLI input read examples
-// -----------------------
+// Ejemplos de lectura desde la consola
+// ------------------------------------
 
-// Read an string
-let name = prompt('Write your name: ')
-console.log(`Hello ${name}, welcome to the Computer Programming Course 2026 | UTN - FRRQ`)
+// Leer un texto
+const name = prompt('¿Cómo te llamás? ')
+console.log(`Hola ${name}, bienvenido a Programación en Computación 2026 | UTN - FRRQ`)
 
-// Read an integer
-let edad = parseInt(prompt('How old are you?: '))
-console.log(`${name} is ${edad} years old`)
+// Leer un número entero
+const fileNumber = parseInt(prompt('Tu número de legajo: '))
+console.log(`Legajo: ${fileNumber}`)
 
-// Read a float
-let height = parseFloat(prompt('How tall are you (on [m])?: '))
-console.log(`${name} is ${height} [m] tall`)
-
+// Leer un número con decimales
+const height = parseFloat(prompt('¿Cuánto medís [m]? '))
+console.log(`${name} mide ${height.toFixed(2)} m`)
