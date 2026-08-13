@@ -30,6 +30,7 @@ import { spawn } from 'node:child_process'
 import { readdir, access, readFile, writeFile, unlink, stat } from 'node:fs/promises'
 import path from 'node:path'
 import { marked } from 'marked'
+import markedKatex from 'marked-katex-extension'
 
 // tools/ vive en <repo>/.catedra/tools
 const TOOLS = import.meta.dirname
@@ -40,6 +41,18 @@ const MARP = path.join(CATEDRA, 'node_modules/.bin/marp')
 const CHROME = process.env.CHROME_PATH
   || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 const BASE = path.join(REPO, 'unidades')
+
+// Fórmulas: $…$ en línea y $$…$$ en bloque. La carrera es de ingeniería y los
+// enunciados las necesitan; marked por sí solo deja el LaTeX crudo y el alumno
+// termina leyendo «$$\frac{V}{I}$$» en el PDF.
+//
+// KaTeX renderiza del lado del servidor: sale HTML + CSS, sin JavaScript en el
+// documento. throwOnError:false hace que una fórmula mal escrita se muestre en
+// rojo en vez de abortar el render de toda la unidad.
+const KATEX_CSS = path.join(CATEDRA, 'node_modules/katex/dist/katex.min.css')
+const KATEX_FONTS = path.join(CATEDRA, 'node_modules/katex/dist/fonts')
+
+marked.use(markedKatex({ throwOnError: false }))
 
 const argv = process.argv.slice(2)
 const flags = new Set(argv.filter((a) => a.startsWith('--')))
@@ -127,6 +140,12 @@ async function renderDoc (dir, nombre) {
 
   const md = await readFile(src, 'utf8')
   const css = await readFile(path.join(TOOLS, 'apunte-print.css'), 'utf8')
+
+  // El CSS de KaTeX se inyecta inline, así que sus url(fonts/…) quedarían
+  // relativas a la carpeta de la unidad, donde no hay ninguna fuente. Se
+  // reescriben a rutas absolutas file:// hacia node_modules.
+  const katexCss = (await readFile(KATEX_CSS, 'utf8'))
+    .replaceAll('url(fonts/', `url(file://${KATEX_FONTS}/`)
   const out = path.join(BASE, dir, `${nombre}.pdf`)
   const tmp = path.join(BASE, dir, `.${nombre}-tmp.html`)
 
@@ -135,6 +154,7 @@ async function renderDoc (dir, nombre) {
   await writeFile(tmp, `<!doctype html>
 <html lang="es">
 <head><meta charset="utf-8"><title>${titulo}</title>
+<style>${katexCss}</style>
 <style>${css}</style></head>
 <body>${marked.parse(md)}</body>
 </html>`, 'utf8')
@@ -142,6 +162,8 @@ async function renderDoc (dir, nombre) {
   try {
     await run(CHROME, [
       '--headless', '--disable-gpu', '--no-pdf-header-footer',
+      // Las fuentes de KaTeX se cargan por file:// desde node_modules
+      '--allow-file-access-from-files',
       `--print-to-pdf=${out}`, tmp,
     ])
   } finally {

@@ -19,7 +19,9 @@
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.5.0",
+    "katex": "^0.17.0",
     "marked": "^16.4.0",
+    "marked-katex-extension": "^5.1.10",
     "puppeteer-core": "^24.9.0"
   }
 }

@@ -345,6 +345,17 @@ mejor herramienta que hay para enseñar bucles.
   `overflow: hidden`, así que el exceso de contenido no se rompe: desaparece
 - No es el apunte con saltos de página: es el guion visual de la clase
 
+### Fórmulas
+
+Se escriben en LaTeX y las renderiza **KaTeX** en el pipeline de `render.mjs`: `$…$` en línea
+y `$$…$$` en bloque. Sin eso, `marked` deja el LaTeX crudo y el alumno lee `$$\frac{V}{I}$$`
+en el PDF.
+
+⚠️ **El `$` de cierre necesita un espacio o una coma después.** Si le sigue un guion largo o
+un paréntesis (`$10^{-14}$—`, `$P$)`), la fórmula **no se renderiza y no avisa**: sale el
+LaTeX crudo. Es el modo estricto, elegido a propósito — el permisivo (`nonStandard`) arregla
+eso pero puede aparear dos `$` de importes en pesos y convertir medio párrafo en fórmula.
+
 ### Trabajo práctico (`tp.md`)
 
 Estructura que se usa en la cátedra (verificada contra los TPs y parciales de 2025):
@@ -413,6 +424,8 @@ en Node (ver abajo). Verificado el 03-08-2026.
 | `readline-sync` | 1.4.10 | Sin cambios upstream; es la última. |
 | Marp CLI | **4.5.0** | Dependencia de desarrollo del repo raíz (`npm install`). |
 | `marked` | 16.4.0 | Markdown → HTML para el PDF de los apuntes. |
+| `katex` | 0.17.0 | Fórmulas del material, renderizadas del lado del servidor. |
+| `marked-katex-extension` | 5.1.10 | Engancha KaTeX a marked. |
 | `puppeteer-core` | 24.9.0 | Usado por `check-slides.mjs` con el Chrome del sistema. |
 
 **Tipografía:** la display face es **JetBrains Mono NL** — monoespaciada, sin serifa, y la
