@@ -28,9 +28,9 @@ un programa se pierden los datos.
 
 |  | Descargar | Leer online |
 |--|-----------|-------------|
-| 📘 **Apunte de teoría** | [`apunte.pdf`](./apunte.pdf) | [`apunte.md`](./apunte.pdf) |
-| 🖥️ **Presentación de clase** | [`presentacion.pdf`](./presentacion.pdf) | [`presentacion.md`](./presentacion.pdf) |
-| 📝 **Trabajo Práctico** | [`tp.pdf`](./tp.pdf) | [`tp.md`](./tp.pdf) |
+| 📘 **Apunte de teoría** | [`apunte.pdf`](./apunte.pdf) | [`apunte.md`](./apunte.md) |
+| 🖥️ **Presentación de clase** | [`presentacion.pdf`](./presentacion.pdf) | [`presentacion.md`](./presentacion.md) |
+| 📝 **Trabajo Práctico** | [`tp.pdf`](./tp.pdf) | [`tp.md`](./tp.md) |
 
 > 💡 Los **PDF** son para descargar, imprimir y estudiar. Los `.md` son el mismo contenido,
 > pero se leen directo en el navegador y desde VSCode — elegí el que te resulte más cómodo.
@@ -42,7 +42,7 @@ un programa se pierden los datos.
 
 ## ⚠️ Antes de la próxima clase
 
-El **Problema 5 del TP es obligatorio**: instalar Node.js (versión **LTS**) y Visual Studio
+El **Problema 7 del TP es obligatorio**: instalar Node.js (versión **LTS**) y Visual Studio
 Code, y verificar que funcionan con `node -v`.
 
 Sin el entorno instalado no vas a poder seguir la clase de la unidad 02. Si la instalación
