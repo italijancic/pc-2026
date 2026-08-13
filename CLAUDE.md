@@ -157,6 +157,7 @@ pc-2026/
 ├── .vscode/                     # settings.json (tema Marp) + extensions.json
 └── .catedra/                    # ⚙️ Maquinaria del docente. El alumno la ignora.
     ├── package.json             # Scripts de render. NO hay package.json en la raíz.
+    ├── .tool-versions           # nodejs 24.19.0 (asdf). Ver abajo por qué acá y no en la raíz.
     ├── .marprc.yml              # Config de Marp
     ├── themes/pc.css            # Tema Marp. UN archivo para las 10 unidades.
     ├── tools/
@@ -417,7 +418,7 @@ en Node (ver abajo). Verificado el 03-08-2026.
 
 | Herramienta | Versión | Nota |
 |-------------|---------|------|
-| Node.js | **24.19.0 LTS** (Krypton) | Existe 26.6.0, pero **no es LTS** hasta oct-2026. Con 30 alumnos instalando, LTS evita problemas irreproducibles. Soporte hasta 2028. |
+| Node.js | **24.19.0 LTS** (Krypton) | Existe 26.7.0, pero **no es LTS** hasta oct-2026. Con 30 alumnos instalando, LTS evita problemas irreproducibles. Soporte hasta 2028. |
 | ESLint | **10.8.0** | Flat config en `eslint.config.mjs`, `semi: never`. Verificado: pasa limpio sobre el template. |
 | `@eslint/js` | 10.0.1 | |
 | `globals` | 17.9.0 | |
@@ -434,6 +435,20 @@ como `⁺⁺`, y el alumno tiene que ver exactamente los caracteres que va a tip
 
 - **Módulos:** ES Modules (`"type": "module"`)
 - **Chrome** es requisito sólo para exportar PDF/PPTX con Marp, no para el curso
+
+### La versión de Node se fija en `.catedra/`, no en la raíz
+
+`.catedra/.tool-versions` fija **nodejs 24.19.0** para asdf, así el render no depende de qué
+intérprete gane en el `PATH`.
+
+**Va ahí y no en la raíz a propósito.** Un `.tool-versions` en la raíz aplicaría también al
+alumno, y el alumno **no usa asdf**: instala Node con el instalador de nodejs.org. Si tuviera
+asdf, un pin en la raíz le fallaría con «version not installed» por una versión que no tiene
+motivo para tener. La raíz es del alumno; el pin es del docente.
+
+`template/` tampoco lleva `.tool-versions`: el `engines` de su `package.json` dice
+`>=24.0.0`, que es un **piso, no un pin**. Subirlo a `>=24.19.0` sólo lograría que a quien
+instaló 24.18 le falle `npm install`, sin ningún beneficio.
 
 ### ⚠️ Dónde se corren los comandos
 
