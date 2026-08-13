@@ -8,6 +8,11 @@
  *   ./presentacion.md                    → ./presentacion.pdf
  *   <URL absoluta>/unidades/NN/tp.md     → <URL absoluta>/unidades/NN/tp.pdf
  *
+ * EXCEPCIÓN: si el texto del link es el nombre del archivo (`[apunte.md](...)`),
+ * no se toca. Ahí el link no dice "abrí el documento" sino "mirá la fuente", y
+ * es justamente lo que ofrece la columna «Leer online» de los README. Sin esta
+ * excepción las dos columnas terminaban apuntando al mismo PDF.
+ *
  * Sólo toca los documentos que **ya tienen** su PDF generado, así que conviene
  * correrlo DESPUÉS de `npm run all`.
  *
@@ -49,10 +54,15 @@ for (const slug of unidades) {
 
     for (const doc of DOCS) {
       if (!await existe(path.join(dir, `${doc}.pdf`))) continue
-      texto = texto
-        .replaceAll(`](./${doc}.md)`, `](./${doc}.pdf)`)
-        .replaceAll(`${URL_BASE}/unidades/${slug}/${doc}.md`,
-          `${URL_BASE}/unidades/${slug}/${doc}.pdf`)
+
+      // El texto del link decide: si nombra al archivo .md, se respeta.
+      const nombraLaFuente = (etiqueta) =>
+        etiqueta.replaceAll('`', '').trim() === `${doc}.md`
+
+      texto = texto.replace(
+        new RegExp(`\\[([^\\]]*)\\]\\((\\./|${URL_BASE}/unidades/${slug}/)${doc}\\.md\\)`, 'g'),
+        (todo, etiqueta, prefijo) =>
+          nombraLaFuente(etiqueta) ? todo : `[${etiqueta}](${prefijo}${doc}.pdf)`)
     }
 
     if (texto !== original) {
