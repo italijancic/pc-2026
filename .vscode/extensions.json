@@ -1,6 +1,6 @@
 {
+  "//": "Marp: para ver las presentaciones de la catedra desde VSCode. La recomendacion de ESLint vive en template/.vscode, que es donde se escribe codigo.",
   "recommendations": [
-    "marp-team.marp-vscode",
-    "dbaeumer.vscode-eslint"
+    "marp-team.marp-vscode"
   ]
 }

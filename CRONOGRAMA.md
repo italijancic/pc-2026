@@ -8,7 +8,7 @@
 |-------|--------|------|--------|
 | 06-08-2026 | [01](./unidades/01-intro-informatica) | Introducción a la informática | ✅ |
 | 13-08-2026 | [02](./unidades/02-entorno-y-primeros-pasos) | Entorno de desarrollo y primeros pasos | ✅ |
-| 20-08-2026 | [03](./unidades/03-variables-y-operadores) | Variables, convenciones y operadores | ⬜ |
+| 20-08-2026 | [03](./unidades/03-variables-y-operadores) | Variables, convenciones y operadores | ✅ |
 | 27-08-2026 | [04](./unidades/04-condicionales) | Condicionales: `if`, `switch-case` | ⬜ |
 | 03-09-2026 | [05](./unidades/05-bucles) | Bucles: `for`, `while`, `do-while` | ⬜ |
 | 10-09-2026 | [06](./unidades/06-funciones) | Funciones: parámetros, retorno, `Math.random()` | ⬜ |

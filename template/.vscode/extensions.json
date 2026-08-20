@@ -1,0 +1,6 @@
+{
+  "//": "Extension recomendada para trabajar en los programas del curso. Cuando abras esta carpeta, VSCode te ofrece instalarla.",
+  "recommendations": [
+    "dbaeumer.vscode-eslint"
+  ]
+}

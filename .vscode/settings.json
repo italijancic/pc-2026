@@ -1,23 +1,8 @@
 {
-  "//": "Configuracion de la catedra. Requiere la extension marp-team.marp-vscode para el preview de las presentaciones.",
-  "//themes": "Rutas relativas a la raiz del workspace. Si cambias esto, recarga la ventana (Developer: Reload Window) para que Marp registre el tema.",
+  "//": "Configuracion de la catedra para ESTE repositorio (el material). Los programas del curso se escriben en una copia de template/, que tiene su propio .vscode.",
+  "//themes": "Ruta relativa a la raiz del workspace. Si la cambias, recarga la ventana (Developer: Reload Window) para que Marp registre el tema.",
   "markdown.marp.themes": [
     "./.catedra/themes/pc.css"
   ],
-  "markdown.marp.enableHtml": true,
-  "[markdown]": {
-    "editor.wordWrap": "on",
-    "editor.rulers": [
-      100
-    ]
-  },
-  "[javascript]": {
-    "editor.formatOnSave": false,
-    "editor.rulers": [
-      100
-    ]
-  },
-  "files.exclude": {
-    "**/node_modules": true
-  }
+  "markdown.marp.enableHtml": true
 }
