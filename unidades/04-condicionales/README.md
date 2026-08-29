@@ -5,22 +5,70 @@
 
 ---
 
-## 🚧 Material en preparación
+## 🎯 Qué vamos a ver
 
-`if` / `else if` / `else`, `switch-case` y lectura por consola.
+Hasta ahora tus programas hacían siempre lo mismo. La clase pasada aprendiste a **preguntar**;
+hoy la respuesta **decide** qué líneas se ejecutan.
 
-El material de esta unidad se publica cuando se dicta la clase. Consultá la fecha en el
-[cronograma](../../CRONOGRAMA.md) y traé el material nuevo con `git pull`.
+- **`if`** — ejecutar un bloque sólo si se cumple una condición
+- **`if` / `else`** — dos caminos, y siempre se toma uno
+- **`if` / `else if` / `else`** — varios casos, y por qué **sólo se ejecuta una rama**
+- **⚠️ El orden de los rangos** — el error que clasifica mal **sin fallar**
+- **`switch-case`**, el `break` que falta, y el `default`
+- **Cuándo `if` y cuándo `switch`**
+- Comparar texto de `prompt()`: `.toLowerCase()` y por qué `'100' > '85'` da `false`
 
-Cuando esté publicada vas a encontrar acá:
-
-| Archivo | Qué es |
-|---------|--------|
-| `apunte.md` | 📘 Apunte completo de teoría |
-| `presentacion.md` | 🖥️ Presentación vista en clase |
-| `tp.md` | 📝 Trabajo Práctico de la unidad |
-| `ejemplos/` | 💻 Programas desarrollados en clase |
+> 🔑 Nada de esto es nuevo del todo: las condiciones son las mismas de la unidad 03.
 
 ---
 
-⬅️ [Volver al índice del curso](../../README.md)
+## 📎 Material
+
+|  | Descargar | Leer online |
+|--|-----------|-------------|
+| 📘 **Apunte de teoría** | [`apunte.pdf`](./apunte.pdf) | [`apunte.md`](./apunte.md) |
+| 🖥️ **Presentación de clase** | [`presentacion.pdf`](./presentacion.pdf) | [`presentacion.md`](./presentacion.md) |
+| 📝 **Trabajo Práctico** | [`tp.pdf`](./tp.pdf) | [`tp.md`](./tp.md) |
+
+---
+
+## 💻 Ejemplos de la clase
+
+| Archivo | Qué muestra |
+|---------|-------------|
+| [`01-if.js`](./ejemplos/01-if.js) | La forma mínima: ejecutar sólo si |
+| [`02-if-else.js`](./ejemplos/02-if-else.js) | Dos caminos, y guardar la condición en una variable |
+| [`03-else-if.js`](./ejemplos/03-else-if.js) | Varios casos: sólo se ejecuta el primero que da `true` |
+| [`04-el-orden-importa.js`](./ejemplos/04-el-orden-importa.js) | ⚠️ Los mismos rangos, bien y mal ordenados |
+| [`05-switch.js`](./ejemplos/05-switch.js) | `switch-case` sobre un código de mantenimiento |
+| [`06-break-olvidado.js`](./ejemplos/06-break-olvidado.js) | Qué pasa exactamente cuando falta un `break` |
+| [`07-clasificar-medicion.js`](./ejemplos/07-clasificar-medicion.js) | Integrador: leer, calcular y clasificar |
+| [`08-menu-operaciones.js`](./ejemplos/08-menu-operaciones.js) | `switch` sobre una opción tipeada por el usuario |
+
+**Cómo correrlos:**
+
+- Los ejemplos **01 al 06** funcionan solos: `node 01-if.js`
+- Los ejemplos **07 y 08** usan `prompt()`: copiá el contenido a `src/app.js` del
+  [template](../../template) y corré `npm run dev`
+
+> 💡 El ejemplo **04** es el más importante de la unidad. Corrélo y leé las dos salidas.
+
+---
+
+## ⚠️ Antes de la próxima clase
+
+- Hacé el [Trabajo Práctico](./tp.pdf) — 6 problemas, sobre todo el **3** y el **6**
+- **Probá cada programa con un valor por cada rama.** Un condicional probado con un solo caso
+  es un condicional sin probar
+- Repasá el `%` de la unidad 03: en la unidad 05 aparece en cada bucle
+
+---
+
+## ✅ Requisitos previos
+
+[Unidad 03](../03-variables-y-operadores): `const`/`let`, operadores relacionales y lógicos,
+`===`, y `parseInt`/`parseFloat`.
+
+---
+
+⬅️ [Unidad 03 — Variables y operadores](../03-variables-y-operadores) · [Índice del curso](../../README.md) · [Unidad 05 — Bucles](../05-bucles) ➡️
