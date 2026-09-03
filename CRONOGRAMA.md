@@ -9,20 +9,23 @@
 | 06-08-2026 | [01](./unidades/01-intro-informatica) | Introducción a la informática | ✅ |
 | 13-08-2026 | [02](./unidades/02-entorno-y-primeros-pasos) | Entorno de desarrollo y primeros pasos | ✅ |
 | 20-08-2026 | [03](./unidades/03-variables-y-operadores) | Variables, convenciones y operadores | ✅ |
-| 27-08-2026 | [04](./unidades/04-condicionales) | Condicionales: `if`, `switch-case` | 🟡 |
-| 03-09-2026 | [05](./unidades/05-bucles) | Bucles: `for`, `while`, `do-while` | ⬜ |
-| 10-09-2026 | [06](./unidades/06-funciones) | Funciones: parámetros, retorno, `Math.random()` | ⬜ |
-| 17-09-2026 | [07](./unidades/07-arrays-unidimensionales) | Arrays unidimensionales (vectores) | 🟡 |
-| 24-09-2026 | — | Práctica integradora de vectores | ⬜ |
-| 01-10-2026 | — | **1er Examen Parcial** | ⬜ |
-| 08-10-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | ⬜ |
-| 15-10-2026 | [09](./unidades/09-operaciones-matriciales) | Operaciones matriciales | ⬜ |
-| 22-10-2026 | [10](./unidades/10-integrador-ingenieria) | Integrador: problemas de ingeniería | ⬜ |
-| 29-10-2026 | — | Práctica integradora de matrices | ⬜ |
-| 05-11-2026 | — | **2do Examen Parcial** | ⬜ |
-| 12-11-2026 | — | Recuperatorio | ⬜ |
+| 03-09-2026 | [04](./unidades/04-condicionales) | Condicionales: `if`, `switch-case` | ✅ |
+| 10-09-2026 | [05](./unidades/05-bucles) | Bucles: `for`, `while`, `do-while` | ⬜ |
+| 17-09-2026 | [06](./unidades/06-funciones) | Funciones: parámetros, retorno, `Math.random()` | ⬜ |
+| 24-09-2026 | [07](./unidades/07-arrays-unidimensionales) | Arrays unidimensionales (vectores) | 🟡 |
+| 01-10-2026 | — | Práctica integradora de vectores | ⬜ |
+| 08-10-2026 | — | **1er Examen Parcial** | ⬜ |
+| 15-10-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | ⬜ |
+| 22-10-2026 | [09](./unidades/09-operaciones-matriciales) | Operaciones matriciales | ⬜ |
+| 29-10-2026 | [10](./unidades/10-integrador-ingenieria) | Integrador: problemas de ingeniería | ⬜ |
+| 05-11-2026 | — | Práctica integradora de matrices | ⬜ |
+| 12-11-2026 | — | **2do Examen Parcial** | ⬜ |
+| 19-11-2026 | — | Recuperatorio | ⬜ |
 
 **Referencia de estado:** ⬜ pendiente · 🟡 en preparación · ✅ dictada y publicada
+
+> 📌 **El cronograma se corrió una semana** a partir de la unidad 04: no hubo clase el
+> 27-08-2026. Las fechas de acá en adelante ya están recalculadas.
 
 > ⚠️ Las fechas de **parciales y recuperatorio** son tentativas: ajustar según calendario
 > académico y feriados. Las fechas de clase son los jueves consecutivos desde el inicio de
