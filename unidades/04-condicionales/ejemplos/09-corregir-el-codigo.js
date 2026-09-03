@@ -1,17 +1,17 @@
 /**
  * Unidad 04 — Integrador de cierre
  *
- * Este programa TIENE QUINCE ERRORES. Encontralos y corregilos.
+ * Este programa ESTÁ MAL ESCRITO. Encontrá los errores y corregilos.
  *
- * No son errores de sintaxis: el programa arranca y da resultados. El problema
- * es que los resultados están mal, y que casi nada respeta las convenciones de
- * la cátedra.
+ * Ninguno es un error de sintaxis: el programa arranca y da resultados. El
+ * problema es que los resultados están mal, y que casi nada respeta las
+ * convenciones de la cátedra.
  *
  * Los errores son de tres tipos:
  *
- *    6  declaraciones y nombres   var/let/const, idioma, formato, claridad
- *    4  buenas prácticas          conversiones, comparaciones, texto
- *    5  condicionales             orden de las ramas, break, llaves, ===
+ *    · declaraciones y nombres   var/let/const, idioma, formato, claridad
+ *    · buenas prácticas          conversiones, comparaciones, texto
+ *    · condicionales             orden de las ramas, break, llaves, ===
  *
  * ATENCIÓN: usa prompt(). Copiá el contenido a src/app.js del template y
  * ejecutalo con: npm run dev

@@ -721,37 +721,38 @@ if (measured < lowerLimit) {
 
 <p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
 
-## Quince errores
+## La consigna
 
 <div class="body">
+
+<p class="lead">Este programa verifica si una tensión está dentro de <strong>±5 % sobre 380 V</strong> y decide una acción de mantenimiento. <strong>Está mal escrito.</strong></p>
 
 <div class="cols cols-3">
 
 <div class="card">
-<h3>6</h3>
-<p>Declaraciones<br>y nombres</p>
+<h3>Declaraciones<br>y nombres</h3>
 <p class="quiet">unidad 03</p>
 </div>
 
 <div class="card">
-<h3>4</h3>
-<p>Buenas<br>prácticas</p>
+<h3>Buenas<br>prácticas</h3>
 <p class="quiet">unidades 02–03</p>
 </div>
 
 <div class="card">
-<h3>5</h3>
-<p>Condicionales</p>
+<h3>Condicionales</h3>
 <p class="quiet">unidad 04</p>
 </div>
 
 </div>
 
-<div class="tip">
-<p><strong>No lo leas buscando errores.</strong> Primero <strong>corrélo</strong> con 300 V y código P, y fijate si la salida tiene sentido.</p>
-</div>
+<p class="note-p"><strong>Ninguno es un error de sintaxis:</strong> el programa arranca y da resultados. El problema es que los resultados están mal.</p>
 
 </div>
+
+<!-- NO decir cuántos errores hay. Si saben el número, buscan hasta llegar y
+     paran; sin el número tienen que juzgar el código.
+     Está en ejemplos/09-corregir-el-codigo.js -->
 
 ---
 
@@ -860,100 +861,6 @@ Correctivo
 <!-- Correrlo en vivo. Que vean la salida absurda ANTES de buscar errores:
      así el ejercicio deja de ser "cacería de estilo" y pasa a ser
      "algo está roto, encontralo". -->
-
----
-
-<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
-
-## Declaraciones y nombres
-
-<div class="body">
-
-| # | Está mal | Tiene que ser |
-|:-:|---|---|
-| 1 | `var TENSION_NOMINAL` | `const` — **`var` no se usa** |
-| 2 | `= 380;` | sin punto y coma |
-| 3 | `TENSION_NOMINAL` | `NOMINAL_VOLTAGE` — en inglés |
-| 4 | `let tolerancia` | `const TOLERANCE` — no cambia |
-| 5 | `const x` | `measuredVoltage` — descriptivo |
-| 6 | `Limite_Inferior` | `lowerLimit` — camelCase, y `const` |
-
-</div>
-
----
-
-<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
-
-## Buenas prácticas
-
-<div class="body">
-
-| # | Está mal | Tiene que ser |
-|:-:|---|---|
-| 7 | `const x = prompt(...)` | falta `parseFloat` |
-| 8 | `'Límites: ' + a + ' a ' + b` | template literal |
-| 9 | `prompt('Código...')` | falta `.toLowerCase()` |
-| 10 | `Limite_Superior = ... (1 - tolerancia)` | **`(1 + TOLERANCE)`** |
-
-<div class="pitfall">
-<p>El <strong>10</strong> es el que rompe la cuenta: los dos límites dan <code>361</code>. Copiar la línea de arriba y no cambiar el signo es el error más común que existe — y no se ve leyendo, se ve <strong>corriendo</strong>.</p>
-</div>
-
-</div>
-
----
-
-<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
-
-## Condicionales
-
-<div class="body">
-
-| # | Está mal | Tiene que ser |
-|:-:|---|---|
-| 11 | `if (x <= Limite_Superior)` primero | **rangos de menor a mayor** |
-| 12 | `case 'P'` sin `break` | un `break` por `case` |
-| 13 | `switch` sin `default` | contemplar el código desconocido |
-| 14 | `if (x == 380)` | `===`, y usar la constante |
-| 15 | `if (...) console.log(...)` | **llaves siempre** |
-
-<p class="note-p">El <strong>15</strong> hace que <code>Fin del control</code> se imprima siempre, aunque la indentación diga que está adentro del <code>if</code>.</p>
-
-</div>
-
----
-
-<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
-
-## Las decisiones, corregidas
-
-<div class="body">
-
-<div class="file" data-name="src/app.js">
-
-```js
-if (measuredVoltage < lowerLimit) {
-  console.log('BAJA')
-} else if (measuredVoltage <= upperLimit) {
-  console.log('NORMAL')
-} else {
-  console.log('ALTA')
-}
-
-switch (serviceCode) {
-  case 'p':
-    console.log('Preventivo')
-    break
-  default:
-    console.log('Código desconocido')
-}
-```
-
-</div>
-
-</div>
-
-<!-- Mismo largo que el roto. Y ahora 300 V da BAJA. -->
 
 ---
 

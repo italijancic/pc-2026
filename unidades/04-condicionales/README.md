@@ -44,7 +44,7 @@ hoy la respuesta **decide** qué líneas se ejecutan.
 | [`06-break-olvidado.js`](./ejemplos/06-break-olvidado.js) | Qué pasa exactamente cuando falta un `break` |
 | [`07-clasificar-medicion.js`](./ejemplos/07-clasificar-medicion.js) | Integrador: leer, calcular y clasificar |
 | [`08-menu-operaciones.js`](./ejemplos/08-menu-operaciones.js) | `switch` sobre una opción tipeada por el usuario |
-| [`09-corregir-el-codigo.js`](./ejemplos/09-corregir-el-codigo.js) | 🔍 **Integrador de cierre:** un programa con 15 errores para encontrar |
+| [`09-corregir-el-codigo.js`](./ejemplos/09-corregir-el-codigo.js) | 🔍 **Integrador de cierre:** un programa mal escrito, para corregir |
 
 **Cómo correrlos:**
 
@@ -56,14 +56,14 @@ hoy la respuesta **decide** qué líneas se ejecutan.
 
 ### 🔍 El integrador de cierre
 
-El [`09-corregir-el-codigo.js`](./ejemplos/09-corregir-el-codigo.js) es un programa **con 15
-errores plantados** que repasa todo lo visto desde la unidad 01:
+El [`09-corregir-el-codigo.js`](./ejemplos/09-corregir-el-codigo.js) es un programa **mal
+escrito** que repasa todo lo visto desde la unidad 01. Tiene errores de tres tipos:
 
-| Cuántos | De qué tipo | Unidad |
-|:-:|---|---|
-| 6 | Declaraciones y nombres — `var`/`let`/`const`, idioma, formato | 03 |
-| 4 | Buenas prácticas — conversiones, comparaciones, texto | 02–03 |
-| 5 | Condicionales — orden de las ramas, `break`, llaves, `===` | 04 |
+| De qué tipo | Unidad |
+|---|---|
+| Declaraciones y nombres — `var`/`let`/`const`, idioma, formato | 03 |
+| Buenas prácticas — conversiones, comparaciones, texto | 02–03 |
+| Condicionales — orden de las ramas, `break`, llaves, `===` | 04 |
 
 Ninguno es un error de sintaxis: **el programa arranca y da resultados**. El problema es que
 los resultados están mal.
