@@ -725,33 +725,33 @@ if (measured < lowerLimit) {
 
 <div class="body">
 
-<p class="lead">Este programa verifica si una tensión está dentro de <strong>±5 % sobre 380 V</strong> y decide una acción de mantenimiento. <strong>Está mal escrito.</strong></p>
+<p class="lead">Un compañero te pasa este programa para que lo mires antes de entregarlo. Verifica si una tensión está dentro de <strong>±5 % sobre 380 V</strong> y decide una acción de mantenimiento.</p>
+
+<p class="statement">¿Lo aprobás?</p>
 
 <div class="cols cols-3">
 
 <div class="card">
 <h3>Declaraciones<br>y nombres</h3>
-<p class="quiet">unidad 03</p>
 </div>
 
 <div class="card">
 <h3>Buenas<br>prácticas</h3>
-<p class="quiet">unidades 02–03</p>
 </div>
 
 <div class="card">
-<h3>Condicionales</h3>
-<p class="quiet">unidad 04</p>
+<h3>Decisiones</h3>
 </div>
 
 </div>
 
-<p class="note-p"><strong>Ninguno es un error de sintaxis:</strong> el programa arranca y da resultados. El problema es que los resultados están mal.</p>
+<p class="note-p">Las tres cosas que se miran al revisar cualquier código.</p>
 
 </div>
 
-<!-- NO decir cuántos errores hay. Si saben el número, buscan hasta llegar y
-     paran; sin el número tienen que juzgar el código.
+<!-- NO decirles que está mal escrito ni cuántos errores hay: eso lo tienen
+     que determinar ELLOS. Es la diferencia entre «encontrá los 15 errores»
+     y una revisión de verdad, donde nadie te avisa que hay problemas.
      Está en ejemplos/09-corregir-el-codigo.js -->
 
 ---
@@ -836,7 +836,7 @@ if (x == 380) console.log('Es el nominal')
 
 <p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
 
-## Corrélo antes de leerlo
+## Antes de leerlo, corrélo
 
 <div class="body">
 
@@ -845,22 +845,21 @@ if (x == 380) console.log('Es el nominal')
 ```bash
 Tensión medida [V]: 300
 Código de servicio: P
-
-Límites: 361 a 361
-NORMAL
-Preventivo
-Correctivo
 ```
 
 </div>
 
-<p class="lead">Un tablero a <strong>300 V</strong> sobre una nominal de 380 dice <strong>NORMAL</strong>. Y el mantenimiento es preventivo <em>y</em> correctivo a la vez.</p>
+<p class="statement">¿La salida tiene sentido?</p>
+
+<p class="note-p">Revisar código no es sólo leerlo. Un programa puede estar impecable a la vista y devolver cualquier cosa.</p>
 
 </div>
 
-<!-- Correrlo en vivo. Que vean la salida absurda ANTES de buscar errores:
-     así el ejercicio deja de ser "cacería de estilo" y pasa a ser
-     "algo está roto, encontralo". -->
+<!-- NO mostrar la salida: que la vean ellos al ejecutar.
+     Si alguno no puede correrlo, recién ahí proyectarlo en vivo — pero
+     después de que lo hayan intentado.
+     Con 300 y P sale: límites 361 a 361, NORMAL, y Preventivo + Correctivo
+     juntos. El absurdo es el gancho. -->
 
 ---
 

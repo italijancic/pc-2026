@@ -335,8 +335,9 @@ mejor herramienta que hay para enseñar bucles.
 #### Reglas
 
 - Una idea por diapositiva, poco texto, mucho código
-- Notas del docente como comentarios HTML (`<!-- … -->`): invisibles en la diapositiva, viajan
-  en el PDF vía `--pdf-notes`
+- Notas del docente como comentarios HTML (`<!-- … -->`): invisibles en la diapositiva y
+  **fuera del PDF**. Se leen en el `.md`, desde VSCode. El PDF es lo que descarga el alumno:
+  una nota con la respuesta de un ejercicio adentro es un spoiler esperando a pasar
 - **No poner CSS dentro de una presentación.** El tema vive en un solo archivo y cambia las
   10 unidades a la vez
 - **Un `---` dentro de un bloque de código parte la diapositiva.** Indentalo o usá otro carácter

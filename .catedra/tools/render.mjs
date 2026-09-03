@@ -109,7 +109,9 @@ async function renderPresentacion (dir, fmt) {
     '--theme-set', path.join(CATEDRA, 'themes'),
     `--${fmt}`, '-o', out, src,
   ]
-  if (fmt === 'pdf') args.push('--pdf-notes')
+  // Las notas del docente (comentarios HTML) NO van al PDF: se leen en el .md,
+  // desde VSCode. El PDF es lo que descarga el alumno, y un comentario con la
+  // respuesta de un ejercicio adentro es un spoiler esperando a pasar.
 
   await run(MARP, args)
 
