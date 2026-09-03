@@ -44,14 +44,33 @@ hoy la respuesta **decide** qué líneas se ejecutan.
 | [`06-break-olvidado.js`](./ejemplos/06-break-olvidado.js) | Qué pasa exactamente cuando falta un `break` |
 | [`07-clasificar-medicion.js`](./ejemplos/07-clasificar-medicion.js) | Integrador: leer, calcular y clasificar |
 | [`08-menu-operaciones.js`](./ejemplos/08-menu-operaciones.js) | `switch` sobre una opción tipeada por el usuario |
+| [`09-corregir-el-codigo.js`](./ejemplos/09-corregir-el-codigo.js) | 🔍 **Integrador de cierre:** un programa con 15 errores para encontrar |
 
 **Cómo correrlos:**
 
 - Los ejemplos **01 al 06** funcionan solos: `node 01-if.js`
-- Los ejemplos **07 y 08** usan `prompt()`: copiá el contenido a `src/app.js` del
+- Los ejemplos **07, 08 y 09** usan `prompt()`: copiá el contenido a `src/app.js` del
   [template](../../template) y corré `npm run dev`
 
 > 💡 El ejemplo **04** es el más importante de la unidad. Corrélo y leé las dos salidas.
+
+### 🔍 El integrador de cierre
+
+El [`09-corregir-el-codigo.js`](./ejemplos/09-corregir-el-codigo.js) es un programa **con 15
+errores plantados** que repasa todo lo visto desde la unidad 01:
+
+| Cuántos | De qué tipo | Unidad |
+|:-:|---|---|
+| 6 | Declaraciones y nombres — `var`/`let`/`const`, idioma, formato | 03 |
+| 4 | Buenas prácticas — conversiones, comparaciones, texto | 02–03 |
+| 5 | Condicionales — orden de las ramas, `break`, llaves, `===` | 04 |
+
+Ninguno es un error de sintaxis: **el programa arranca y da resultados**. El problema es que
+los resultados están mal.
+
+> 🧪 **No lo leas buscando errores.** Primero **corrélo** con una tensión de `300` y el código
+> `P`, y fijate si la salida tiene sentido. Un tablero a 300 V sobre una nominal de 380 no
+> puede estar NORMAL.
 
 ---
 

@@ -704,6 +704,259 @@ if (measured < lowerLimit) {
 
 ---
 
+<!-- _class: chapter -->
+
+<p class="kicker">Cierre</p>
+
+## Corregir código ajeno
+
+<!-- INTEGRADOR DE LAS 4 UNIDADES. 20 min, de a dos.
+     Está en ejemplos/09-corregir-el-codigo.js — que lo abran y lo CORRAN
+     antes de leerlo.
+     Al revelar, pedir manos por cada error: "¿quién encontró el 11?".
+     Ese conteo es el diagnóstico: los que junten pocas manos son los temas
+     a reforzar antes del parcial. Anotalos. -->
+
+---
+
+<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
+
+## Quince errores
+
+<div class="body">
+
+<div class="cols cols-3">
+
+<div class="card">
+<h3>6</h3>
+<p>Declaraciones<br>y nombres</p>
+<p class="quiet">unidad 03</p>
+</div>
+
+<div class="card">
+<h3>4</h3>
+<p>Buenas<br>prácticas</p>
+<p class="quiet">unidades 02–03</p>
+</div>
+
+<div class="card">
+<h3>5</h3>
+<p>Condicionales</p>
+<p class="quiet">unidad 04</p>
+</div>
+
+</div>
+
+<div class="tip">
+<p><strong>No lo leas buscando errores.</strong> Primero <strong>corrélo</strong> con 300 V y código P, y fijate si la salida tiene sentido.</p>
+</div>
+
+</div>
+
+---
+
+<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
+
+## El programa · declaraciones
+
+<div class="body">
+
+<div class="file" data-name="src/app.js">
+
+```js
+var TENSION_NOMINAL = 380;
+let tolerancia = 0.05
+
+const x = prompt('Tensión medida [V]: ')
+const codigo = prompt('Código de servicio: ')
+
+let Limite_Inferior = TENSION_NOMINAL * (1 - tolerancia)
+let Limite_Superior = TENSION_NOMINAL * (1 - tolerancia)
+
+console.log('Límites: ' + Limite_Inferior + ' a ' + Limite_Superior)
+```
+
+</div>
+
+</div>
+
+---
+
+<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
+
+## El programa · clasificar
+
+<div class="body">
+
+<div class="file" data-name="src/app.js">
+
+```js
+if (x <= Limite_Superior) {
+  console.log('NORMAL')
+} else if (x < Limite_Inferior) {
+  console.log('BAJA')
+} else {
+  console.log('ALTA')
+}
+```
+
+</div>
+
+</div>
+
+---
+
+<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
+
+## El programa · el resto
+
+<div class="body">
+
+<div class="file" data-name="src/app.js">
+
+```js
+switch (codigo) {
+  case 'P':
+    console.log('Preventivo')
+  case 'C':
+    console.log('Correctivo')
+    break
+}
+
+if (x == 380) console.log('Es el nominal')
+  console.log('Fin del control')
+```
+
+</div>
+
+</div>
+
+---
+
+<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
+
+## Corrélo antes de leerlo
+
+<div class="body">
+
+<div class="out">
+
+```bash
+Tensión medida [V]: 300
+Código de servicio: P
+
+Límites: 361 a 361
+NORMAL
+Preventivo
+Correctivo
+```
+
+</div>
+
+<p class="lead">Un tablero a <strong>300 V</strong> sobre una nominal de 380 dice <strong>NORMAL</strong>. Y el mantenimiento es preventivo <em>y</em> correctivo a la vez.</p>
+
+</div>
+
+<!-- Correrlo en vivo. Que vean la salida absurda ANTES de buscar errores:
+     así el ejercicio deja de ser "cacería de estilo" y pasa a ser
+     "algo está roto, encontralo". -->
+
+---
+
+<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
+
+## Declaraciones y nombres
+
+<div class="body">
+
+| # | Está mal | Tiene que ser |
+|:-:|---|---|
+| 1 | `var TENSION_NOMINAL` | `const` — **`var` no se usa** |
+| 2 | `= 380;` | sin punto y coma |
+| 3 | `TENSION_NOMINAL` | `NOMINAL_VOLTAGE` — en inglés |
+| 4 | `let tolerancia` | `const TOLERANCE` — no cambia |
+| 5 | `const x` | `measuredVoltage` — descriptivo |
+| 6 | `Limite_Inferior` | `lowerLimit` — camelCase, y `const` |
+
+</div>
+
+---
+
+<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
+
+## Buenas prácticas
+
+<div class="body">
+
+| # | Está mal | Tiene que ser |
+|:-:|---|---|
+| 7 | `const x = prompt(...)` | falta `parseFloat` |
+| 8 | `'Límites: ' + a + ' a ' + b` | template literal |
+| 9 | `prompt('Código...')` | falta `.toLowerCase()` |
+| 10 | `Limite_Superior = ... (1 - tolerancia)` | **`(1 + TOLERANCE)`** |
+
+<div class="pitfall">
+<p>El <strong>10</strong> es el que rompe la cuenta: los dos límites dan <code>361</code>. Copiar la línea de arriba y no cambiar el signo es el error más común que existe — y no se ve leyendo, se ve <strong>corriendo</strong>.</p>
+</div>
+
+</div>
+
+---
+
+<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
+
+## Condicionales
+
+<div class="body">
+
+| # | Está mal | Tiene que ser |
+|:-:|---|---|
+| 11 | `if (x <= Limite_Superior)` primero | **rangos de menor a mayor** |
+| 12 | `case 'P'` sin `break` | un `break` por `case` |
+| 13 | `switch` sin `default` | contemplar el código desconocido |
+| 14 | `if (x == 380)` | `===`, y usar la constante |
+| 15 | `if (...) console.log(...)` | **llaves siempre** |
+
+<p class="note-p">El <strong>15</strong> hace que <code>Fin del control</code> se imprima siempre, aunque la indentación diga que está adentro del <code>if</code>.</p>
+
+</div>
+
+---
+
+<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
+
+## Las decisiones, corregidas
+
+<div class="body">
+
+<div class="file" data-name="src/app.js">
+
+```js
+if (measuredVoltage < lowerLimit) {
+  console.log('BAJA')
+} else if (measuredVoltage <= upperLimit) {
+  console.log('NORMAL')
+} else {
+  console.log('ALTA')
+}
+
+switch (serviceCode) {
+  case 'p':
+    console.log('Preventivo')
+    break
+  default:
+    console.log('Código desconocido')
+}
+```
+
+</div>
+
+</div>
+
+<!-- Mismo largo que el roto. Y ahora 300 V da BAJA. -->
+
+---
+
 <!-- _class: cover -->
 
 <div class="rule"></div>
