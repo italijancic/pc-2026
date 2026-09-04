@@ -758,77 +758,21 @@ if (measured < lowerLimit) {
 
 <p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
 
-## El programa · declaraciones
+## El programa
 
 <div class="body">
 
-<div class="file" data-name="src/app.js">
+<div class="file" data-name="ejemplos/09-corregir-el-codigo.js">
 
-```js
-var TENSION_NOMINAL = 380;
-let tolerancia = 0.05
-
-const x = prompt('Tensión medida [V]: ')
-const codigo = prompt('Código de servicio: ')
-
-let Limite_Inferior = TENSION_NOMINAL * (1 - tolerancia)
-let Limite_Superior = TENSION_NOMINAL * (1 - tolerancia)
-
-console.log('Límites: ' + Limite_Inferior + ' a ' + Limite_Superior)
+```bash
+git pull
 ```
 
 </div>
 
-</div>
+<p class="lead">Son 32 líneas. Abrilo <strong>entero</strong> en VSCode: para revisar código hay que verlo completo, no de a pedazos.</p>
 
----
-
-<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
-
-## El programa · clasificar
-
-<div class="body">
-
-<div class="file" data-name="src/app.js">
-
-```js
-if (x <= Limite_Superior) {
-  console.log('NORMAL')
-} else if (x < Limite_Inferior) {
-  console.log('BAJA')
-} else {
-  console.log('ALTA')
-}
-```
-
-</div>
-
-</div>
-
----
-
-<p class="eyebrow"><b>04</b><span>/</span>Cierre</p>
-
-## El programa · el resto
-
-<div class="body">
-
-<div class="file" data-name="src/app.js">
-
-```js
-switch (codigo) {
-  case 'P':
-    console.log('Preventivo')
-  case 'C':
-    console.log('Correctivo')
-    break
-}
-
-if (x == 380) console.log('Es el nominal')
-  console.log('Fin del control')
-```
-
-</div>
+<p class="note-p">Copiá el contenido a <code>src/app.js</code> de tu proyecto y corré <code>npm run dev</code>.</p>
 
 </div>
 

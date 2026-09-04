@@ -1,24 +1,23 @@
 /**
- * Unidad 04 — Integrador de cierre
+ * Unidad 04 — Cierre
  *
- * Este programa ESTÁ MAL ESCRITO. Encontrá los errores y corregilos.
+ * Un compañero te pasa este programa para que lo mires antes de entregarlo.
+ * Verifica si una tensión medida está dentro de ±5 % sobre 380 V y decide una
+ * acción de mantenimiento.
  *
- * Ninguno es un error de sintaxis: el programa arranca y da resultados. El
- * problema es que los resultados están mal, y que casi nada respeta las
- * convenciones de la cátedra.
+ * ¿Lo aprobás?
  *
- * Los errores son de tres tipos:
+ * Al revisar cualquier código se miran tres cosas:
  *
- *    · declaraciones y nombres   var/let/const, idioma, formato, claridad
- *    · buenas prácticas          conversiones, comparaciones, texto
- *    · condicionales             orden de las ramas, break, llaves, ===
+ *    · declaraciones y nombres
+ *    · buenas prácticas
+ *    · decisiones
+ *
+ * 🧪 ANTES DE LEERLO, CORRELO con una tensión de 300 V y el código P.
+ *    ¿La salida tiene sentido?
  *
  * ATENCIÓN: usa prompt(). Copiá el contenido a src/app.js del template y
  * ejecutalo con: npm run dev
- *
- * 🧪 CÓMO EMPEZAR: no leas buscando errores. Primero CORRELO con una tensión
- *    de 300 V y el código P, y mirá si la salida tiene sentido. Un tablero a
- *    300 V sobre una nominal de 380 no puede estar NORMAL.
  */
 
 import { prompt } from './prompt.js'
