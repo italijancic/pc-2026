@@ -44,33 +44,45 @@ hoy la respuesta **decide** qué líneas se ejecutan.
 | [`06-break-olvidado.js`](./ejemplos/06-break-olvidado.js) | Qué pasa exactamente cuando falta un `break` |
 | [`07-clasificar-medicion.js`](./ejemplos/07-clasificar-medicion.js) | Integrador: leer, calcular y clasificar |
 | [`08-menu-operaciones.js`](./ejemplos/08-menu-operaciones.js) | `switch` sobre una opción tipeada por el usuario |
-| [`09-corregir-el-codigo.js`](./ejemplos/09-corregir-el-codigo.js) | 🔍 **Integrador de cierre:** un programa mal escrito, para corregir |
+| [`09-corregir-el-codigo.js`](./ejemplos/09-corregir-el-codigo.js) | 🔍 **Revisión de código:** el tablero eléctrico |
+| [`10-corregir-el-compresor.js`](./ejemplos/10-corregir-el-compresor.js) | 🔍🔍 **Revisión de código:** el compresor — **más difícil** |
 
 **Cómo correrlos:**
 
 - Los ejemplos **01 al 06** funcionan solos: `node 01-if.js`
-- Los ejemplos **07, 08 y 09** usan `prompt()`: copiá el contenido a `src/app.js` del
+- Los ejemplos **07 al 10** usan `prompt()`: copiá el contenido a `src/app.js` del
   [template](../../template) y corré `npm run dev`
 
 > 💡 El ejemplo **04** es el más importante de la unidad. Corrélo y leé las dos salidas.
 
-### 🔍 El integrador de cierre
+### 🔍 Las dos revisiones de código
 
-El [`09-corregir-el-codigo.js`](./ejemplos/09-corregir-el-codigo.js) es un programa **mal
-escrito** que repasa todo lo visto desde la unidad 01. Tiene errores de tres tipos:
+Dos programas **para revisar como si te los pasara un compañero antes de entregarlos**. En los
+dos la consigna es la misma: *¿lo aprobás?*
 
-| De qué tipo | Unidad |
-|---|---|
-| Declaraciones y nombres — `var`/`let`/`const`, idioma, formato | 03 |
-| Buenas prácticas — conversiones, comparaciones, texto | 02–03 |
-| Condicionales — orden de las ramas, `break`, llaves, `===` | 04 |
+| Archivo | Tema | Nivel |
+|---|---|:-:|
+| [`09-corregir-el-codigo.js`](./ejemplos/09-corregir-el-codigo.js) | Tablero eléctrico | 🔍 |
+| [`10-corregir-el-compresor.js`](./ejemplos/10-corregir-el-compresor.js) | Compresor de aire | 🔍🔍 |
 
-Ninguno es un error de sintaxis: **el programa arranca y da resultados**. El problema es que
-los resultados están mal.
+Al revisar cualquier código se miran tres cosas: **declaraciones y nombres**, **buenas
+prácticas** y **decisiones**.
 
-> 🧪 **No lo leas buscando errores.** Primero **corrélo** con una tensión de `300` y el código
-> `P`, y fijate si la salida tiene sentido. Un tablero a 300 V sobre una nominal de 380 no
-> puede estar NORMAL.
+**El 10 es bastante más difícil que el 9.** En el del tablero los problemas se ven leyendo; en
+el del compresor, la mitad sólo aparece si pensás qué pasa con **cada rango de valores**. Tres
+preguntas que ayudan:
+
+- ¿Esta condición **puede ser falsa** alguna vez?
+- ¿Se puede **llegar** a esta rama?
+- ¿Qué pasa **justo en el valor del límite**?
+
+> 🧪 **No los leas buscando errores. Corrélos primero.**
+>
+> - El **09**, con una tensión de `300` y el código `P`
+> - El **10**, con `Presión 3 · Horas 1800 · Aceite 90 · si · turno M` — la presión mínima de
+>   trabajo son 6 bar
+>
+> ¿La salida tiene sentido?
 
 ---
 
