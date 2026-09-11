@@ -230,6 +230,26 @@ TP, soluciones de referencia y exámenes. Son las mismas con las que se corrige.
 - Nombres descriptivos: `studentAge`, nunca `x`
 - Código modular: funciones cortas, con parámetros y valor de retorno. No todo en el main.
 - Devolver `.slice()` al retornar un vector desde una función (desacoplamiento por referencia)
+- **Las variables de dato de un bucle se declaran con `let` ANTES del bucle, no con `const`
+  adentro.** Técnicamente `const` adentro es correcto —cada vuelta crea una ligadura nueva—
+  pero choca de frente con lo que se enseñó en la unidad 03 (`const` = «el valor no se
+  reasigna»): el alumno lee `const measured` en un bucle y pregunta por qué no es `let` si
+  cambia en cada vuelta. Además unifica la forma con el mantra de la unidad 05: **declarar
+  antes · actualizar adentro · usar después**.
+
+  ```js
+  let outOfRange = 0
+  let measured = 0            // ✅ antes del bucle
+
+  for (let i = 1; i <= 5; i++) {
+    measured = 350 + i * 15   // se actualiza, no se declara
+    if (measured > UPPER_LIMIT) { outOfRange++ }
+  }
+  ```
+
+  No aplica a `const` dentro de una **función** (ahí el valor realmente no cambia y no hay
+  confusión) ni a los ejemplos de la unidad 03 que demuestran ámbito de bloque, donde el punto
+  es justamente que la variable muere con el bloque.
 - Comentario de cabecera JSDoc en cada función:
 
 ```js

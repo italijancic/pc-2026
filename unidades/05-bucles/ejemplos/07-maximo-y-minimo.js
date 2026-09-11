@@ -7,9 +7,10 @@
 
 // ── Con mediciones positivas, inicializar en 0 parece andar ──────────────
 let maximum = 0
+let measured = 0
 
 for (let i = 1; i <= 5; i++) {
-  const measured = 350 + i * 15
+  measured = 350 + i * 15
   if (measured > maximum) {
     maximum = measured
   }
@@ -22,9 +23,10 @@ console.log()
 // ── Con temperaturas bajo cero, se rompe ─────────────────────────────────
 // Mediciones: -5, -12, -19, -26, -33. El máximo real es -5.
 let maxWrong = 0
+let temperature = 0
 
 for (let i = 1; i <= 5; i++) {
-  const temperature = 2 - i * 7
+  temperature = 2 - i * 7
   if (temperature > maxWrong) {
     maxWrong = temperature
   }
@@ -39,7 +41,7 @@ console.log()
 let maxOk = 2 - 1 * 7          // la primera medición
 
 for (let i = 2; i <= 5; i++) { // desde la segunda
-  const temperature = 2 - i * 7
+  temperature = 2 - i * 7
   if (temperature > maxOk) {
     maxOk = temperature
   }

@@ -338,9 +338,10 @@ una condición. Acá se juntan los bucles de hoy con los condicionales de la uni
 const LOWER_LIMIT = 361
 const UPPER_LIMIT = 399
 let outOfRange = 0
+let measured = 0
 
 for (let i = 1; i <= 5; i++) {
-  const measured = 350 + i * 15
+  measured = 350 + i * 15
 
   if (measured < LOWER_LIMIT || measured > UPPER_LIMIT) {
     outOfRange = outOfRange + 1
@@ -369,9 +370,10 @@ reemplazando cada vez que aparece algo mejor.
 
 ```js
 let maximum = 0
+let measured = 0
 
 for (let i = 1; i <= 5; i++) {
-  const measured = 350 + i * 15
+  measured = 350 + i * 15
 
   if (measured > maximum) {
     maximum = measured
@@ -417,9 +419,10 @@ import { prompt } from './prompt.js'
 
 const howMany = parseInt(prompt('¿Cuántas mediciones? '))
 let total = 0
+let measured = 0
 
 for (let i = 1; i <= howMany; i++) {
-  const measured = parseFloat(prompt(`Medición ${i}: `))
+  measured = parseFloat(prompt(`Medición ${i}: `))
   total = total + measured
 }
 

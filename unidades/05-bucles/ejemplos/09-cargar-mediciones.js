@@ -10,9 +10,10 @@ import { prompt } from './prompt.js'
 
 const howMany = parseInt(prompt('¿Cuántas mediciones? '))
 let total = 0
+let measured = 0
 
 for (let i = 1; i <= howMany; i++) {
-  const measured = parseFloat(prompt(`Medición ${i} [V]: `))
+  measured = parseFloat(prompt(`Medición ${i} [V]: `))
   total = total + measured
 }
 

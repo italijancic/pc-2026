@@ -548,9 +548,10 @@ for (let i = 1; i <= 5; i++) {
 
 ```js
 let outOfRange = 0
+let measured = 0
 
 for (let i = 1; i <= 5; i++) {
-  const measured = 350 + i * 15
+  measured = 350 + i * 15
 
   if (measured < 361 || measured > 399) {
     outOfRange++
@@ -586,9 +587,10 @@ Fuera de rango: 2
 
 ```js
 let maximum = 0
+let measured = 0
 
 for (let i = 1; i <= 5; i++) {
-  const measured = 350 + i * 15
+  measured = 350 + i * 15
   if (measured > maximum) {
     maximum = measured
   }
@@ -745,9 +747,10 @@ while (i <= 5) {
 ```js
 const howMany = parseInt(prompt('¿Cuántas mediciones? '))
 let total = 0
+let measured = 0
 
 for (let i = 1; i <= howMany; i++) {
-  const measured = parseFloat(prompt(`Medición ${i} [V]: `))
+  measured = parseFloat(prompt(`Medición ${i} [V]: `))
   total = total + measured
 }
 

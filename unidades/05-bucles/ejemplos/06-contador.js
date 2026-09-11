@@ -10,10 +10,13 @@
 const LOWER_LIMIT = 361
 const UPPER_LIMIT = 399
 
+// Se declaran las dos ANTES del bucle y se actualizan adentro: la misma forma
+// que el acumulador. Así ninguna variable "nace" en el medio del bucle.
 let outOfRange = 0
+let measured = 0
 
 for (let i = 1; i <= 5; i++) {
-  const measured = 350 + i * 15
+  measured = 350 + i * 15
 
   if (measured < LOWER_LIMIT || measured > UPPER_LIMIT) {
     outOfRange++
