@@ -373,6 +373,11 @@ Se escriben en LaTeX y las renderiza **KaTeX** en el pipeline de `render.mjs`: `
 y `$$…$$` en bloque. Sin eso, `marked` deja el LaTeX crudo y el alumno lee `$$\frac{V}{I}$$`
 en el PDF.
 
+⚠️ **En las presentaciones, el LaTeX NO se procesa dentro de etiquetas HTML.** Marp lo
+renderiza en contexto Markdown —tablas, y bloques `$$…$$` entre líneas en blanco, incluso
+adentro de un `<div>`— pero dentro de un `<p class="lead">` o `<p class="statement">` sale
+crudo, sin avisar. Ahí usá `<code>f(x) = 2x + 1</code>`.
+
 ⚠️ **El `$` de cierre necesita un espacio o una coma después.** Si le sigue un guion largo o
 un paréntesis (`$10^{-14}$—`, `$P$)`), la fórmula **no se renderiza y no avisa**: sale el
 LaTeX crudo. Es el modo estricto, elegido a propósito — el permisivo (`nonStandard`) arregla
