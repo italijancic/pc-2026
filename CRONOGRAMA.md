@@ -11,26 +11,26 @@
 | 20-08-2026 | [03](./unidades/03-variables-y-operadores) | Variables, convenciones y operadores | ✅ |
 | 03-09-2026 | [04](./unidades/04-condicionales) | Condicionales: `if`, `switch-case` | ✅ |
 | 10-09-2026 | [05](./unidades/05-bucles) | Bucles: `for`, `while`, `do-while` | ✅ |
-| 17-09-2026 | [06](./unidades/06-funciones) | Funciones: parámetros, retorno, `Math.random()` | 🟡 |
-| 24-09-2026 | [07](./unidades/07-arrays-unidimensionales) | Arrays unidimensionales (vectores) | 🟡 |
-| 01-10-2026 | — | Práctica integradora de vectores (1 de 2) | ⬜ |
-| 08-10-2026 | — | Práctica integradora de vectores (2 de 2) | ⬜ |
-| 15-10-2026 | — | **1er Examen Parcial** | ⬜ |
-| 22-10-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | ⬜ |
-| 29-10-2026 | [09](./unidades/09-operaciones-matriciales) | Operaciones matriciales | ⬜ |
-| 05-11-2026 | [10](./unidades/10-integrador-ingenieria) | Integrador: problemas de ingeniería | ⬜ |
-| 12-11-2026 | — | **2do Examen Parcial** | ⬜ |
-| 19-11-2026 | — | Recuperatorio | ⬜ |
+| 01-10-2026 | [06](./unidades/06-funciones) | Funciones: parámetros, retorno, `Math.random()` | ✅ |
+| 08-10-2026 | [07](./unidades/07-arrays-unidimensionales) | Arrays unidimensionales (vectores) | 🟡 |
+| 15-10-2026 | — | Práctica integradora de vectores (1 de 2) | ⬜ |
+| 22-10-2026 | — | Práctica integradora de vectores (2 de 2) | ⬜ |
+| 29-10-2026 | — | **1er Examen Parcial** *(tentativo)* | ⬜ |
+| 05-11-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | ⬜ |
+| 12-11-2026 | [09](./unidades/09-operaciones-matriciales) | Operaciones matriciales | ⬜ |
+| 19-11-2026 | [10](./unidades/10-integrador-ingenieria) | Integrador: problemas de ingeniería | ⬜ |
+| 26-11-2026 | — | **2do Examen Parcial** | ⬜ |
+| 03-12-2026 | — | Recuperatorio | ⬜ |
 
 **Referencia de estado:** ⬜ pendiente · 🟡 en preparación · ✅ dictada y publicada
 
 > 📌 **El cronograma se corrió una semana** a partir de la unidad 04: no hubo clase el
 > 27-08-2026. Las fechas de acá en adelante ya están recalculadas.
 
-> 📌 **Los vectores se practican dos clases, no una** (01-10 y 08-10), y el 1er parcial pasa
-> del 08-10 al **15-10**. La semana sale de fusionar la unidad 10 con la práctica integradora
-> de matrices, que eran la misma clase con dos nombres — ver el punto 4 de abajo. El 2do
-> parcial y el recuperatorio **no se mueven**.
+> 📌 **El cronograma se corrió dos semanas más** desde la unidad 06, que se dictó el 01-10 en
+> lugar del 17-09. Se mantienen las **dos clases de práctica de vectores** antes del 1er parcial
+> (ver el punto 5 de abajo), y todo lo que sigue se desplaza: el 1er parcial queda **tentativo
+> para el 29-10** y el recuperatorio pasa al **03-12**.
 
 > ⚠️ Las fechas de **parciales y recuperatorio** son tentativas: ajustar según calendario
 > académico y feriados. Las fechas de clase son los jueves consecutivos desde el inicio de
