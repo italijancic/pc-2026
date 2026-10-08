@@ -896,17 +896,13 @@ undefined
 </div>
 
 <div>
-
 <p class="lead">Escribís <code>node</code> en la terminal, sin archivo, y cada línea se ejecuta <strong>en el momento</strong>.</p>
+</div>
+
+</div>
 
 <div class="tip">
-<p>El <code>undefined</code> después de un <code>const</code> <strong>no es un error</strong>: es lo que devuelve una declaración. El de <code>temps[4]</code> sí te está avisando algo.</p>
-</div>
-
-<p class="note-p">Para salir: <code>.exit</code> o <code>Ctrl + D</code> dos veces.</p>
-
-</div>
-
+<p>El <code>undefined</code> después de un <code>const</code> <strong>no es un error</strong>: es lo que devuelve una declaración. El de <code>temps[4]</code> sí te está avisando algo. Para salir: <code>.exit</code> o <code>Ctrl + D</code> dos veces.</p>
 </div>
 
 </div>
@@ -919,7 +915,44 @@ undefined
 
 <p class="eyebrow"><b>07</b><span>/</span>Consola</p>
 
-## Depurar una función
+## Pegar una función: modo <code>.editor</code>
+
+<div class="body">
+
+<div class="file" data-name="terminal">
+
+```bash
+> .editor
+// Entering editor mode (Ctrl+D to finish, Ctrl+C to cancel)
+const findMax = (vector) => {
+  let max = 0
+  for (let i = 0; i < vector.length; i++) {
+    if (vector[i] > max) { max = vector[i] }
+  }
+  return max
+}
+undefined
+```
+
+</div>
+
+<div class="tip">
+<p>Escribís <code>.editor</code>, pegás la función —o varias juntas— y <code>Ctrl + D</code> la carga. <code>Ctrl + C</code> cancela. Nada se ejecuta hasta que terminás.</p>
+</div>
+
+</div>
+
+<!-- Tambien se puede pegar directo, sin .editor: la consola espera a que se
+     cierren las llaves y muestra | en cada linea de continuacion. .editor es la
+     forma prolija: marca donde empieza y donde termina, y permite pegar de una
+     vez una funcion junto con las que usa (rndInt y getRandomVector, por
+     ejemplo). -->
+
+---
+
+<p class="eyebrow"><b>07</b><span>/</span>Consola</p>
+
+## Depurar: los casos difíciles
 
 <div class="body">
 
@@ -930,16 +963,10 @@ undefined
 <div class="file" data-name="terminal">
 
 ```bash
-> const findMax = (vector) => {
-|   let max = 0
-|   for (let i = 0; i < vector.length; i++) {
-|     if (vector[i] > max) { max = vector[i] }
-|   }
-|   return max
-| }
-undefined
 > findMax([62, 68, 91, 74])
 91
+> findMax([7])
+7
 > findMax([-5, -12, -3])
 0
 ```
@@ -949,22 +976,21 @@ undefined
 </div>
 
 <div>
+<p class="lead">Ya cargada, la llamás con los casos <strong>difíciles</strong>. Sin <code>npm run dev</code>, sin cargar datos.</p>
+</div>
 
-<p class="lead">Pegás la función y la llamás con los casos <strong>difíciles</strong>. Sin <code>npm run dev</code>, sin cargar datos.</p>
+</div>
 
 <div class="pitfall">
-<p><code>0</code> no está en el vector. Con todos negativos, el error de <code>let max = 0</code> aparece en el segundo intento.</p>
-</div>
-
-</div>
-
+<p><code>0</code> no está en el vector. Con todos negativos aparece el error de <code>let max = 0</code>: el mismo de la Parte 5, encontrado en tres líneas.</p>
 </div>
 
 </div>
 
 <!-- Este es el uso que importa: un depurador de bolsillo. Que prueben siempre
-     tres casos: el normal, todos negativos, y el maximo en la posicion 0.
-     Si la funcion usa otra (rndInt, isWithinRange), hay que pegar las dos. -->
+     el caso normal, uno de un solo elemento, todos negativos y el maximo en la
+     posicion 0. Si la funcion usa otra (rndInt, isWithinRange), hay que cargar
+     las dos: con .editor se pegan juntas. -->
 
 ---
 
@@ -977,6 +1003,7 @@ undefined
 <table>
 <thead><tr><th>Tecla o comando</th><th>Qué hace</th></tr></thead>
 <tbody>
+<tr><td><code>.editor</code></td><td>Modo para pegar funciones enteras; <code>Ctrl + D</code> las carga</td></tr>
 <tr><td><code>↑</code> / <code>↓</code></td><td>Recorre lo que ya escribiste: corregís una línea sin volver a tipearla</td></tr>
 <tr><td><code>Tab</code></td><td>Autocompleta: <code>Math.</code> + <code>Tab</code> lista <code>floor</code>, <code>random</code>, <code>round</code>…</td></tr>
 <tr><td><code>_</code></td><td>El último resultado</td></tr>

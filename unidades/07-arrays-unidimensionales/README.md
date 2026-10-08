@@ -30,6 +30,10 @@ los dos parciales) se apoya en esto.
 | [`tp.md`](./tp.pdf) | 📝 Trabajo Práctico: análisis de mediciones de tensión de línea. |
 | [`ejemplos/`](./ejemplos) | 💻 Programas desarrollados en clase. |
 
+> 📋 **¿Querés copiar código de la presentación?** Desde el PDF se copia sin la sangría.
+> Abrí [`presentacion.md`](./presentacion.md) acá en GitHub: cada bloque de código tiene su
+> **botón de copiar** arriba a la derecha, y se copia tal cual.
+
 ---
 
 ## 💻 Ejemplos de clase
@@ -67,7 +71,7 @@ $ node
 > findMax([-5, -12, -3])     // ¿da -3? Si da 0, el máximo arranca mal
 ```
 
-Para salir: `.exit` o `Ctrl + D` dos veces. Todo lo demás está en las diapositivas 33 a 36 de la
+Para salir: `.exit` o `Ctrl + D` dos veces. Todo lo demás está en las diapositivas 33 a 37 de la
 [presentación](./presentacion.pdf).
 
 ---
@@ -75,7 +79,7 @@ Para salir: `.exit` o `Ctrl + D` dos veces. Todo lo demás está en las diaposit
 ## 🧪 El taller de la clase
 
 Después de la teoría se trabaja en clase sobre **cuatro consignas**, enunciadas en la
-[presentación](./presentacion.pdf) (diapositivas 37 a 43). Todas operan sobre el mismo vector: ocho temperaturas de
+[presentación](./presentacion.pdf) (diapositivas 38 a 44). Todas operan sobre el mismo vector: ocho temperaturas de
 rodamiento, con alarma por encima de `80 °C`.
 
 | | Consigna | Firma |
