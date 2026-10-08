@@ -36,8 +36,10 @@ footer: 'Programación en Computación · UTN FRRQ · 2026'
 <li><span><strong>El problema</strong> que resuelven los vectores</span></li>
 <li><span>Declarar, inicializar y acceder por <strong>índice</strong></span></li>
 <li><span><strong>Recorrer</strong> con <code>for</code> y con <code>while</code></span></li>
-<li><span>Los <strong>cinco algoritmos</strong> fundamentales</span></li>
 <li><span><code>.slice()</code>: la trampa de las <strong>referencias</strong></span></li>
+<li><span>Los <strong>cinco algoritmos</strong> fundamentales</span></li>
+<li><span>Probar y depurar en la <strong>consola</strong> de Node</span></li>
+<li><span><strong>Taller</strong>: ahora ustedes</span></li>
 </ol>
 
 <p class="tip"><strong>Requisitos:</strong> unidad 05 (bucles) y unidad 06 (funciones). Todo lo de hoy se escribe dentro de funciones.</p>
@@ -471,226 +473,6 @@ while (i < vector.length) {
 
 <p class="kicker">Parte 4</p>
 
-## Los cinco algoritmos
-
----
-
-<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 1 de 5</p>
-
-## Acumular
-
-<div class="body">
-
-<div class="cols cols-2-1">
-
-<div class="file" data-name="src/app.js">
-
-```js
-const sumAll = (vector) => {
-  let total = 0
-
-  for (let i = 0; i < vector.length; i++) {
-    total += vector[i]
-  }
-
-  return total
-}
-```
-
-</div>
-
-<div>
-<p class="mem-label">Traza con [5, 10, 15]</p>
-<table class="trace">
-<thead><tr><th>i</th><th>v[i]</th><th>suma</th></tr></thead>
-<tbody>
-<tr><td>—</td><td>—</td><td>0</td></tr>
-<tr><td>0</td><td>5</td><td>5</td></tr>
-<tr><td>1</td><td>10</td><td>15</td></tr>
-<tr><td>2</td><td>15</td><td class="is-mark">30</td></tr>
-</tbody>
-</table>
-</div>
-
-</div>
-
-<p class="tip">El acumulador arranca en <code>0</code> y se declara <strong>fuera</strong> del bucle. Adentro, se reinicia en cada vuelta.</p>
-
-</div>
-
----
-
-<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 2 de 5</p>
-
-## Contar según una condición
-
-<div class="body">
-
-<div class="file" data-name="src/app.js">
-
-```js
-const countEven = (vector) => {
-  let count = 0
-
-  for (let i = 0; i < vector.length; i++) {
-    if (vector[i] % 2 === 0) {
-      count++
-    }
-  }
-
-  return count
-}
-```
-
-</div>
-
-<p class="lead">Igual que acumular, pero el contador sube <strong>de a uno</strong> y sólo cuando se cumple el <code>if</code>.</p>
-
-</div>
-
----
-
-<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 3 de 5</p>
-
-## Máximo y su posición
-
-<div class="body">
-
-<div class="file" data-name="src/app.js">
-
-```js
-const findMax = (vector) => {
-  let max = vector[0]                        // el PRIMERO, no 0
-  let position = 0
-
-  for (let i = 1; i < vector.length; i++) {     // arranca en 1
-    if (vector[i] > max) {
-      max = vector[i]
-      position = i
-    }
-  }
-
-  return [max, position]                // dos datos → un vector
-}
-```
-
-</div>
-
-</div>
-
----
-
-<!-- _class: ask -->
-
-<p class="kicker">Pregunta</p>
-
-## ¿Por qué no <code>let max = 0</code>?
-
-```js
-findMax([-5, -12, -3, -40])
-```
-
-<!-- Respuesta: devolvería 0, un valor que NO ESTÁ en el vector.
-     Que lo piensen 30 segundos. En los parciales se corrige como error GRAVE. -->
-
----
-
-<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 3 de 5</p>
-
-## Con temperaturas bajo cero
-
-<div class="body">
-
-<p class="mem-label">Vector de trabajo</p>
-
-<div class="mem">
-<div><b>-5</b><i>0</i></div>
-<div><b>-12</b><i>1</i></div>
-<div class="is-mark"><b>-3</b><i>2</i></div>
-<div><b>-40</b><i>3</i></div>
-</div>
-
-<table>
-<thead><tr><th>Inicializando en</th><th>Resultado</th></tr></thead>
-<tbody>
-<tr><td><code>let max = 0</code></td><td><strong>0</strong> — un valor que no está en el vector ❌</td></tr>
-<tr><td><code>let max = vector[0]</code></td><td><strong>-3</strong> ✅</td></tr>
-</tbody>
-</table>
-
-<div class="pitfall">
-<p>En los parciales esto se corrige como <strong>error grave</strong>: denota no entender qué representa el acumulador.</p>
-</div>
-
-</div>
-
----
-
-<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 4 de 5</p>
-
-## Búsqueda lineal
-
-<div class="body">
-
-<div class="file" data-name="src/app.js">
-
-```js
-const linearSearch = (vector, wanted) => {
-  let position = -1
-  let i = 0
-
-  while (i < vector.length && position === -1) {   // corta al encontrarlo
-    if (vector[i] === wanted) { position = i }
-    i++
-  }
-
-  return position                             // -1 si no está
-}
-```
-
-</div>
-
-<p class="tip"><code>-1</code> es un índice <strong>imposible</strong>: así distinguís «no está» de «está en la posición 0».</p>
-
-</div>
-
----
-
-<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 5 de 5</p>
-
-## Vector aleatorio
-
-<div class="body">
-
-<div class="file" data-name="src/app.js">
-
-```js
-const rndInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1)) + min
-
-const getRandomVector = (size, min, max) => {
-  const vector = new Array(size)
-
-  for (let i = 0; i < size; i++) {
-    vector[i] = rndInt(min, max)
-  }
-
-  return vector.slice()
-}
-```
-
-</div>
-
-<p class="note-p"><code>rndInt()</code> ya la escribimos en la unidad 06. Se reusa de acá en adelante.</p>
-
-</div>
-
----
-
-<!-- _class: chapter -->
-
-<p class="kicker">Parte 5</p>
-
 ## La trampa de <code>.slice()</code>
 
 ---
@@ -839,11 +621,11 @@ const doubleAll = (vector) => {
 
 ```js
 const doubleAll = (vector) => {
-  const r = vector.slice()
+  const result = vector.slice()
   for (...) {
-    r[i] = r[i] * 2
+    result[i] = result[i] * 2
   }
-  return r
+  return result
 }
 ```
 
@@ -852,6 +634,226 @@ const doubleAll = (vector) => {
 </div>
 
 <p class="tip">Usá <code>.slice()</code> cuando una función <strong>recibe</strong> un vector que no debe modificar, y cuando <strong>retorna</strong> uno.</p>
+
+</div>
+
+---
+
+<!-- _class: chapter -->
+
+<p class="kicker">Parte 5</p>
+
+## Los cinco algoritmos
+
+---
+
+<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 1 de 5</p>
+
+## Acumular
+
+<div class="body">
+
+<div class="cols cols-2-1">
+
+<div class="file" data-name="src/app.js">
+
+```js
+const sumAll = (vector) => {
+  let total = 0
+
+  for (let i = 0; i < vector.length; i++) {
+    total += vector[i]
+  }
+
+  return total
+}
+```
+
+</div>
+
+<div>
+<p class="mem-label">Traza con [5, 10, 15]</p>
+<table class="trace">
+<thead><tr><th>i</th><th>v[i]</th><th>suma</th></tr></thead>
+<tbody>
+<tr><td>—</td><td>—</td><td>0</td></tr>
+<tr><td>0</td><td>5</td><td>5</td></tr>
+<tr><td>1</td><td>10</td><td>15</td></tr>
+<tr><td>2</td><td>15</td><td class="is-mark">30</td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<p class="tip">El acumulador arranca en <code>0</code> y se declara <strong>fuera</strong> del bucle. Adentro, se reinicia en cada vuelta.</p>
+
+</div>
+
+---
+
+<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 2 de 5</p>
+
+## Contar según una condición
+
+<div class="body">
+
+<div class="file" data-name="src/app.js">
+
+```js
+const countEven = (vector) => {
+  let count = 0
+
+  for (let i = 0; i < vector.length; i++) {
+    if (vector[i] % 2 === 0) {
+      count++
+    }
+  }
+
+  return count
+}
+```
+
+</div>
+
+<p class="lead">Igual que acumular, pero el contador sube <strong>de a uno</strong> y sólo cuando se cumple el <code>if</code>.</p>
+
+</div>
+
+---
+
+<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 3 de 5</p>
+
+## Máximo y su posición
+
+<div class="body">
+
+<div class="file" data-name="src/app.js">
+
+```js
+const findMax = (vector) => {
+  let max = vector[0]                        // el PRIMERO, no 0
+  let position = 0
+
+  for (let i = 1; i < vector.length; i++) {     // arranca en 1
+    if (vector[i] > max) {
+      max = vector[i]
+      position = i
+    }
+  }
+
+  return [max, position].slice()                // dos datos → un vector
+}
+```
+
+</div>
+
+</div>
+
+---
+
+<!-- _class: ask -->
+
+<p class="kicker">Pregunta</p>
+
+## ¿Por qué no <code>let max = 0</code>?
+
+```js
+findMax([-5, -12, -3, -40])
+```
+
+<!-- Respuesta: devolvería 0, un valor que NO ESTÁ en el vector.
+     Que lo piensen 30 segundos. En los parciales se corrige como error GRAVE. -->
+
+---
+
+<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 3 de 5</p>
+
+## Con temperaturas bajo cero
+
+<div class="body">
+
+<p class="mem-label">Vector de trabajo</p>
+
+<div class="mem">
+<div><b>-5</b><i>0</i></div>
+<div><b>-12</b><i>1</i></div>
+<div class="is-mark"><b>-3</b><i>2</i></div>
+<div><b>-40</b><i>3</i></div>
+</div>
+
+<table>
+<thead><tr><th>Inicializando en</th><th>Resultado</th></tr></thead>
+<tbody>
+<tr><td><code>let max = 0</code></td><td><strong>0</strong> — un valor que no está en el vector ❌</td></tr>
+<tr><td><code>let max = vector[0]</code></td><td><strong>-3</strong> ✅</td></tr>
+</tbody>
+</table>
+
+<div class="pitfall">
+<p>En los parciales esto se corrige como <strong>error grave</strong>: denota no entender qué representa el acumulador.</p>
+</div>
+
+</div>
+
+---
+
+<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 4 de 5</p>
+
+## Búsqueda lineal
+
+<div class="body">
+
+<div class="file" data-name="src/app.js">
+
+```js
+const linearSearch = (vector, wanted) => {
+  let position = -1
+  let i = 0
+
+  while (i < vector.length && position === -1) {   // corta al encontrarlo
+    if (vector[i] === wanted) { position = i }
+    i++
+  }
+
+  return position                             // -1 si no está
+}
+```
+
+</div>
+
+<p class="tip"><code>-1</code> es un índice <strong>imposible</strong>: así distinguís «no está» de «está en la posición 0».</p>
+
+</div>
+
+---
+
+<p class="eyebrow"><b>07</b><span>/</span>Algoritmo 5 de 5</p>
+
+## Vector aleatorio
+
+<div class="body">
+
+<div class="file" data-name="src/app.js">
+
+```js
+const rndInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min
+
+const getRandomVector = (size, min, max) => {
+  const vector = new Array(size)
+
+  for (let i = 0; i < size; i++) {
+    vector[i] = rndInt(min, max)
+  }
+
+  return vector.slice()
+}
+```
+
+</div>
+
+<p class="note-p"><code>rndInt()</code> ya la escribimos en la unidad 06. Se reusa de acá en adelante.</p>
 
 </div>
 

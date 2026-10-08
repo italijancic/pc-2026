@@ -286,7 +286,7 @@ Igual que acumular, pero el contador sube de a 1 y sólo cuando se cumple la con
 /**
  * Busca el valor máximo de un vector y la posición donde se encuentra.
  * @param {number[]} vector - Vector de números
- * @returns {number[]} Vector de dos elementos: [valorMaximo, position]
+ * @returns {number[]} Vector de dos elementos: [valor máximo, posición]
  */
 const findMax = (vector) => {
   let max = vector[0]      // asumimos que el primero es el máximo
@@ -299,7 +299,7 @@ const findMax = (vector) => {
     }
   }
 
-  return [max, position]
+  return [max, position].slice()
 }
 
 const result = findMax([15, 42, 7, 81, 23, 56])
@@ -541,7 +541,7 @@ console.log(a + 3)          // '53'  ← concatenó, no sumó
 | Contar los que cumplen X | Contador en `0`, `if` adentro del bucle |
 | Buscar máximo/mínimo | Inicializar en `vector[0]`, recorrer desde `i = 1` |
 | Buscar un valor | `position = -1`, cortar al encontrarlo |
-| Devolver dos datos de una función | Un vector: `return [valor, position]` |
+| Devolver dos datos de una función | Un vector: `return [valor, position].slice()` |
 | Copiar un vector | `vector.slice()` |
 | Imprimirlo prolijo | `console.table(vector)` |
 

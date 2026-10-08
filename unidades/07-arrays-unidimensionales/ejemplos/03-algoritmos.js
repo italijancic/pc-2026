@@ -61,7 +61,7 @@ const findMax = (vector) => {
     }
   }
 
-  return [max, position]
+  return [max, position].slice()
 }
 
 /**
