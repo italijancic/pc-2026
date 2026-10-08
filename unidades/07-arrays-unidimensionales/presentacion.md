@@ -861,6 +861,139 @@ const doubleAll = (vector) => {
 
 <p class="kicker">Parte 6</p>
 
+## Probar en la consola
+
+---
+
+<p class="eyebrow"><b>07</b><span>/</span>Consola</p>
+
+## Probar sin crear un archivo
+
+<div class="body">
+
+<div class="cols cols-2">
+
+<div>
+
+<div class="file" data-name="terminal">
+
+```bash
+$ node
+> const temps = [62, 68, 71, 83]
+undefined
+> temps.length
+4
+> temps[temps.length - 1]
+83
+> temps[4]
+undefined
+```
+
+</div>
+
+</div>
+
+<div>
+
+<p class="lead">Escribís <code>node</code> en la terminal, sin archivo, y cada línea se ejecuta <strong>en el momento</strong>.</p>
+
+<div class="tip">
+<p>El <code>undefined</code> después de un <code>const</code> <strong>no es un error</strong>: es lo que devuelve una declaración. El de <code>temps[4]</code> sí te está avisando algo.</p>
+</div>
+
+<p class="note-p">Para salir: <code>.exit</code> o <code>Ctrl + D</code> dos veces.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Es el REPL de Node: lo mismo que irb en Ruby o la consola de Python. Vale la
+     pena abrirlo en vivo y tipear. El temps[4] es el error de la Parte 2: el
+     indice 4 no existe y JavaScript no protesta. -->
+
+---
+
+<p class="eyebrow"><b>07</b><span>/</span>Consola</p>
+
+## Depurar una función
+
+<div class="body">
+
+<div class="cols cols-2">
+
+<div>
+
+<div class="file" data-name="terminal">
+
+```bash
+> const findMax = (vector) => {
+|   let max = 0
+|   for (let i = 0; i < vector.length; i++) {
+|     if (vector[i] > max) { max = vector[i] }
+|   }
+|   return max
+| }
+undefined
+> findMax([62, 68, 91, 74])
+91
+> findMax([-5, -12, -3])
+0
+```
+
+</div>
+
+</div>
+
+<div>
+
+<p class="lead">Pegás la función y la llamás con los casos <strong>difíciles</strong>. Sin <code>npm run dev</code>, sin cargar datos.</p>
+
+<div class="pitfall">
+<p><code>0</code> no está en el vector. Con todos negativos, el error de <code>let max = 0</code> aparece en el segundo intento.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Este es el uso que importa: un depurador de bolsillo. Que prueben siempre
+     tres casos: el normal, todos negativos, y el maximo en la posicion 0.
+     Si la funcion usa otra (rndInt, isWithinRange), hay que pegar las dos. -->
+
+---
+
+<p class="eyebrow"><b>07</b><span>/</span>Consola</p>
+
+## Lo que conviene saber
+
+<div class="body">
+
+<table>
+<thead><tr><th>Tecla o comando</th><th>Qué hace</th></tr></thead>
+<tbody>
+<tr><td><code>↑</code> / <code>↓</code></td><td>Recorre lo que ya escribiste: corregís una línea sin volver a tipearla</td></tr>
+<tr><td><code>Tab</code></td><td>Autocompleta: <code>Math.</code> + <code>Tab</code> lista <code>floor</code>, <code>random</code>, <code>round</code>…</td></tr>
+<tr><td><code>_</code></td><td>El último resultado</td></tr>
+<tr><td><code>Ctrl + C</code></td><td>Cancela la línea que estás escribiendo</td></tr>
+<tr><td><code>.save prueba.js</code></td><td>Guarda en un archivo todo lo que probaste</td></tr>
+<tr><td><code>.help</code></td><td>Lista todos los comandos</td></tr>
+</tbody>
+</table>
+
+<p class="note-p">En el taller que sigue: escribí la función en <code>src/app.js</code>, y <strong>antes de usarla en el programa</strong>, probala acá.</p>
+
+</div>
+
+---
+
+<!-- _class: chapter -->
+
+<p class="kicker">Parte 7</p>
+
 ## Ahora ustedes
 
 ---

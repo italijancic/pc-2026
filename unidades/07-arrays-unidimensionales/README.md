@@ -56,10 +56,26 @@ El ejemplo **05** usa `prompt()`, así que necesita el template del curso. Copia
 
 ---
 
+## 🖥️ Probar en la consola de Node
+
+Escribiendo `node` en la terminal, sin archivo, se abre una **consola interactiva**: cada línea
+se ejecuta en el momento. Sirve para probar una expresión sin crear un archivo, y sobre todo
+para **depurar una función**: la pegás y la llamás con los casos difíciles.
+
+```bash
+$ node
+> findMax([-5, -12, -3])     // ¿da -3? Si da 0, el máximo arranca mal
+```
+
+Para salir: `.exit` o `Ctrl + D` dos veces. Todo lo demás está en las diapositivas 33 a 36 de la
+[presentación](./presentacion.pdf).
+
+---
+
 ## 🧪 El taller de la clase
 
 Después de la teoría se trabaja en clase sobre **cuatro consignas**, enunciadas en la
-[presentación](./presentacion.pdf) (diapositivas 33 a 39). Todas operan sobre el mismo vector: ocho temperaturas de
+[presentación](./presentacion.pdf) (diapositivas 37 a 43). Todas operan sobre el mismo vector: ocho temperaturas de
 rodamiento, con alarma por encima de `80 °C`.
 
 | | Consigna | Firma |
