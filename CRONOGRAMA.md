@@ -12,8 +12,8 @@
 | 03-09-2026 | [04](./unidades/04-condicionales) | Condicionales: `if`, `switch-case` | ✅ |
 | 10-09-2026 | [05](./unidades/05-bucles) | Bucles: `for`, `while`, `do-while` | ✅ |
 | 01-10-2026 | [06](./unidades/06-funciones) | Funciones: parámetros, retorno, `Math.random()` | ✅ |
-| 08-10-2026 | [07](./unidades/07-arrays-unidimensionales) | Arrays unidimensionales (vectores) | 🟡 |
-| 15-10-2026 | — | Práctica integradora de vectores (1 de 2) | ⬜ |
+| 08-10-2026 | [07](./unidades/07-arrays-unidimensionales) | Arrays unidimensionales (vectores) | ✅ |
+| 15-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-1.pdf) | Práctica integradora de vectores (1 de 2): aerogenerador | 🟡 |
 | 22-10-2026 | — | Práctica integradora de vectores (2 de 2) | ⬜ |
 | 29-10-2026 | — | **1er Examen Parcial** *(tentativo)* | ⬜ |
 | 05-11-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | ⬜ |

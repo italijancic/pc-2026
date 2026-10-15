@@ -1004,16 +1004,17 @@ undefined
 <thead><tr><th>Tecla o comando</th><th>Qué hace</th></tr></thead>
 <tbody>
 <tr><td><code>.editor</code></td><td>Modo para pegar funciones enteras; <code>Ctrl + D</code> las carga</td></tr>
-<tr><td><code>↑</code> / <code>↓</code></td><td>Recorre lo que ya escribiste: corregís una línea sin volver a tipearla</td></tr>
+<tr><td><code>.load prueba.js</code></td><td>Carga las funciones de un archivo (sin <code>import</code> ni <code>export</code>)</td></tr>
+<tr><td><code>↑</code> / <code>↓</code></td><td>Recorre lo que ya escribiste, incluso de sesiones anteriores</td></tr>
 <tr><td><code>Tab</code></td><td>Autocompleta: <code>Math.</code> + <code>Tab</code> lista <code>floor</code>, <code>random</code>, <code>round</code>…</td></tr>
-<tr><td><code>_</code></td><td>El último resultado</td></tr>
+<tr><td><code>Ctrl + L</code></td><td>Limpia la pantalla. Lo que cargaste sigue cargado</td></tr>
 <tr><td><code>Ctrl + C</code></td><td>Cancela la línea que estás escribiendo</td></tr>
-<tr><td><code>.save prueba.js</code></td><td>Guarda en un archivo todo lo que probaste</td></tr>
-<tr><td><code>.help</code></td><td>Lista todos los comandos</td></tr>
 </tbody>
 </table>
 
-<p class="note-p">En el taller que sigue: escribí la función en <code>src/app.js</code>, y <strong>antes de usarla en el programa</strong>, probala acá.</p>
+<div class="pitfall">
+<p>¿La corregiste y la volviste a pegar? Node responde <code>Identifier 'findMax' has already been declared</code>: una <code>const</code> no se declara dos veces. Salí con <code>.exit</code>, entrá de nuevo y cargala otra vez.</p>
+</div>
 
 </div>
 
