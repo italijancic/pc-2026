@@ -2,8 +2,8 @@
  * Render del material de la cátedra.
  *
  * Presentaciones: Marp → PDF / HTML / PPTX.
- * Documentos:     apunte.md y tp.md → PDF, via marked + Chrome headless. Son
- *                 documentos de lectura corrida, no diapositivas.
+ * Documentos:     apunte.md, tp.md y practica-N.md → PDF, via marked + Chrome
+ *                 headless. Son documentos de lectura corrida, no diapositivas.
  *
  * El HTML de las presentaciones NO esta en el pipeline por defecto: el PDF
  * proyecta igual y el alumno no lo usa. Queda disponible con `npm run html`.
@@ -136,6 +136,18 @@ async function renderPresentacion (dir, fmt) {
  * @param {string} nombre - Nombre base del documento: 'apunte' o 'tp'
  * @returns {Promise<string|null>} Ruta del PDF generado, o null si no hay fuente
  */
+/**
+ * Documentos de lectura corrida de una unidad: el apunte, el TP y las prácticas
+ * integradoras que haya (practica-1.md, practica-2.md…).
+ */
+async function documentos (dir) {
+  const practicas = (await readdir(path.join(BASE, dir)))
+    .filter((f) => /^practica-\d+\.md$/.test(f))
+    .map((f) => f.replace(/\.md$/, ''))
+    .sort()
+  return ['apunte', 'tp', ...practicas]
+}
+
 async function renderDoc (dir, nombre) {
   const src = path.join(BASE, dir, `${nombre}.md`)
   if (!await existe(src)) return null
@@ -196,7 +208,7 @@ for (const dir of dirs) {
   }
 
   if (flags.has('--docs') || flags.has('--apuntes')) {
-    for (const nombre of ['apunte', 'tp']) {
+    for (const nombre of await documentos(dir)) {
       const out = await renderDoc(dir, nombre)
       if (out) hechos.push(out)
     }

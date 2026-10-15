@@ -153,6 +153,7 @@ pc-2026/
 │       ├── apunte.md            # → apunte.pdf
 │       ├── presentacion.md      # Presentación Marp → presentacion.pdf
 │       ├── tp.md                # → tp.pdf
+│       ├── practica-N.md        # → practica-N.pdf · prácticas integradoras (formato parcial)
 │       └── ejemplos/            # Programas .js desarrollados en clase
 ├── .vscode/                     # settings.json (tema Marp) + extensions.json
 └── .catedra/                    # ⚙️ Maquinaria del docente. El alumno la ignora.
@@ -401,6 +402,18 @@ Estructura que se usa en la cátedra (verificada contra los TPs y parciales de 2
    - **Ejemplo de entrada y salida de consola** — no negociable: el alumno necesita ver el
      formato exacto esperado
 5. **Restricciones** — lista explícita de métodos prohibidos
+
+### Prácticas integradoras (`practica-N.md`)
+
+Las clases de práctica antes de un parcial no tienen unidad propia: su TP vive **en la carpeta
+de la unidad que integra**, como `practica-1.md`, `practica-2.md`… (la práctica de vectores va en
+`07-arrays-unidimensionales/`). `render.mjs` y `fix-links.mjs` los procesan igual que `tp.md`.
+
+Tienen el **formato del parcial**: un caso de ingeniería, cinco incisos, el primero genera los
+datos, y **la fórmula de cada valor a calcular escrita en el enunciado** — se evalúa algoritmia,
+no la física del caso. Incluyen un **vector fijo** para que el alumno compare su salida con los
+ejemplos, y cada ejemplo de salida sale de correr la solución de referencia con ese vector. La
+solución va al repo docente (`soluciones/NN-tema/practica-N-solution.js`).
 
 **Orden de las unidades: funciones (06) antes que vectores (07).** Cambio deliberado respecto
 de 2025, donde los vectores se dieron el `03-09` y las funciones el `10-09`. Consecuencias al

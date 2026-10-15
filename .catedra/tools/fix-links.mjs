@@ -52,7 +52,11 @@ for (const slug of unidades) {
     const original = await readFile(ruta, 'utf8')
     let texto = original
 
-    for (const doc of DOCS) {
+    const practicas = archivos
+      .filter((f) => /^practica-\d+\.md$/.test(f))
+      .map((f) => f.replace(/\.md$/, ''))
+
+    for (const doc of [...DOCS, ...practicas]) {
       if (!await existe(path.join(dir, `${doc}.pdf`))) continue
 
       // El texto del link decide: si nombra al archivo .md, se respeta.
