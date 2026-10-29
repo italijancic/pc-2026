@@ -29,6 +29,7 @@ los dos parciales) se apoya en esto.
 | [`presentacion.md`](./presentacion.pdf) | 🖥️ Presentación vista en clase. |
 | [`tp.md`](./tp.pdf) | 📝 Trabajo Práctico: análisis de mediciones de tensión de línea. |
 | [`practica-1.md`](./practica-1.pdf) | 🧪 **Práctica integradora 1** (15-10): monitoreo de un aerogenerador. Con el formato del 1er parcial. |
+| [`practica-2.md`](./practica-2.pdf) | 🧪 **Práctica integradora 2** (29-10): estación de carga de autoelevadores. Generar sin repetir y vectores paralelos. |
 | [`ejemplos/`](./ejemplos) | 💻 Programas desarrollados en clase. |
 
 > 📋 **¿Querés copiar código de la presentación?** Desde el PDF se copia sin la sangría.
