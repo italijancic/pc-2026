@@ -13,14 +13,14 @@
 | 10-09-2026 | [05](./unidades/05-bucles) | Bucles: `for`, `while`, `do-while` | ✅ |
 | 01-10-2026 | [06](./unidades/06-funciones) | Funciones: parámetros, retorno, `Math.random()` | ✅ |
 | 08-10-2026 | [07](./unidades/07-arrays-unidimensionales) | Arrays unidimensionales (vectores) | ✅ |
-| 15-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-1.pdf) | Práctica integradora de vectores (1 de 2): aerogenerador | 🟡 |
-| 22-10-2026 | — | Práctica integradora de vectores (2 de 2) | ⬜ |
-| 29-10-2026 | — | **1er Examen Parcial** *(tentativo)* | ⬜ |
-| 05-11-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | ⬜ |
-| 12-11-2026 | [09](./unidades/09-operaciones-matriciales) | Operaciones matriciales | ⬜ |
-| 19-11-2026 | [10](./unidades/10-integrador-ingenieria) | Integrador: problemas de ingeniería | ⬜ |
-| 26-11-2026 | — | **2do Examen Parcial** | ⬜ |
-| 03-12-2026 | — | Recuperatorio | ⬜ |
+| 15-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-1.pdf) | Práctica integradora de vectores (1 de 2): aerogenerador | ✅ |
+| 29-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-2.pdf) | Práctica integradora de vectores (2 de 2): autoelevadores | 🟡 |
+| 05-11-2026 | — | **1er Examen Parcial** | ⬜ |
+| 12-11-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | ⬜ |
+| 19-11-2026 | [09](./unidades/09-operaciones-matriciales) | Operaciones matriciales | ⬜ |
+| 26-11-2026 | [10](./unidades/10-integrador-ingenieria) | Integrador: problemas de ingeniería | ⬜ |
+| 03-12-2026 | — | **2do Examen Parcial** | ⬜ |
+| 10-12-2026 | — | Recuperatorio | ⬜ |
 
 **Referencia de estado:** ⬜ pendiente · 🟡 en preparación · ✅ dictada y publicada
 
@@ -31,6 +31,10 @@
 > lugar del 17-09. Se mantienen las **dos clases de práctica de vectores** antes del 1er parcial
 > (ver el punto 5 de abajo), y todo lo que sigue se desplaza: el 1er parcial queda **tentativo
 > para el 29-10** y el recuperatorio pasa al **03-12**.
+
+> 📌 **No hubo clase el 22-10** (suspendida). La práctica de vectores 2 pasó al 29-10, el 1er
+> parcial al **05-11**, y todo lo que sigue se corrió una semana: el recuperatorio queda el
+> **10-12**.
 
 > ⚠️ Las fechas de **parciales y recuperatorio** son tentativas: ajustar según calendario
 > académico y feriados. Las fechas de clase son los jueves consecutivos desde el inicio de
