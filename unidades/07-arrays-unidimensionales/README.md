@@ -48,6 +48,7 @@ los dos parciales) se apoya en esto.
 | [`04-slice-referencias.js`](./ejemplos/04-slice-referencias.js) | ⭐ **El más importante.** Números por copia vs. vectores por referencia, y cómo `.slice()` lo resuelve. |
 | [`05-cargar-por-consola.js`](./ejemplos/05-cargar-por-consola.js) | Carga interactiva con `prompt()` y `console.table()`. |
 | [`06-corregir-los-paneles.js`](./ejemplos/06-corregir-los-paneles.js) | 🔍 **Revisión de código:** el parque solar. |
+| [`07-practica-1-aerogenerador.js`](./ejemplos/07-practica-1-aerogenerador.js) | ✅ **Una resolución posible de la práctica 1**, la que vimos en clase. Resolvela vos primero y después comparala. |
 
 ### Cómo correrlos
 
