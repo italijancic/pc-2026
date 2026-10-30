@@ -31,6 +31,7 @@ los dos parciales) se apoya en esto.
 | [`practica-1.md`](./practica-1.pdf) | 🧪 **Práctica integradora 1** (15-10): monitoreo de un aerogenerador. Con el formato del 1er parcial. |
 | [`practica-1-resuelta.js`](./practica-1-resuelta.js) | ✅ Una resolución posible de la práctica 1. Resolvela vos primero y después comparala. |
 | [`practica-2.md`](./practica-2.pdf) | 🧪 **Práctica integradora 2** (29-10): estación de carga de autoelevadores. Generar sin repetir y vectores paralelos. |
+| [`practica-2-resuelta.js`](./practica-2-resuelta.js) | ✅ Una resolución posible de la práctica 2. Resolvela vos primero y después comparala. |
 | [`ejemplos/`](./ejemplos) | 💻 Programas desarrollados en clase. |
 
 > 📋 **¿Querés copiar código de la presentación?** Desde el PDF se copia sin la sangría.
