@@ -29,6 +29,7 @@ los dos parciales) se apoya en esto.
 | [`presentacion.md`](./presentacion.pdf) | 🖥️ Presentación vista en clase. |
 | [`tp.md`](./tp.pdf) | 📝 Trabajo Práctico: análisis de mediciones de tensión de línea. |
 | [`practica-1.md`](./practica-1.pdf) | 🧪 **Práctica integradora 1** (15-10): monitoreo de un aerogenerador. Con el formato del 1er parcial. |
+| [`practica-1-resuelta.js`](./practica-1-resuelta.js) | ✅ Una resolución posible de la práctica 1. Resolvela vos primero y después comparala. |
 | [`practica-2.md`](./practica-2.pdf) | 🧪 **Práctica integradora 2** (29-10): estación de carga de autoelevadores. Generar sin repetir y vectores paralelos. |
 | [`ejemplos/`](./ejemplos) | 💻 Programas desarrollados en clase. |
 
@@ -48,7 +49,6 @@ los dos parciales) se apoya en esto.
 | [`04-slice-referencias.js`](./ejemplos/04-slice-referencias.js) | ⭐ **El más importante.** Números por copia vs. vectores por referencia, y cómo `.slice()` lo resuelve. |
 | [`05-cargar-por-consola.js`](./ejemplos/05-cargar-por-consola.js) | Carga interactiva con `prompt()` y `console.table()`. |
 | [`06-corregir-los-paneles.js`](./ejemplos/06-corregir-los-paneles.js) | 🔍 **Revisión de código:** el parque solar. |
-| [`07-practica-1-aerogenerador.js`](./ejemplos/07-practica-1-aerogenerador.js) | ✅ **Una resolución posible de la práctica 1**, la que vimos en clase. Resolvela vos primero y después comparala. |
 
 ### Cómo correrlos
 

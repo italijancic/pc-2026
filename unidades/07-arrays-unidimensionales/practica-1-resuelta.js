@@ -5,7 +5,7 @@
  * Programación en Computación — UTN FRRQ 2026
  * ============================================================================
  *
- * Enunciado: practica-1.pdf, en esta misma unidad.
+ * Enunciado: practica-1.pdf, en esta misma carpeta.
  *
  * No es la única forma correcta de resolverla: los nombres y la manera de
  * repartir el trabajo entre funciones pueden variar. Lo que no varía son las
