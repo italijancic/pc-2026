@@ -415,6 +415,11 @@ no la física del caso. Incluyen un **vector fijo** para que el alumno compare s
 ejemplos, y cada ejemplo de salida sale de correr la solución de referencia con ese vector. La
 solución va al repo docente (`soluciones/NN-tema/practica-N-solution.js`).
 
+**Excepción, después de resolverla en clase:** se publica una versión para el alumno como
+ejemplo de la unidad (`ejemplos/NN-practica-N-<caso>.js`), sin las notas del docente («dónde se
+va a trabar la clase», verificación). El nombre no lleva `solution` a propósito: el
+`.gitignore` bloquea `*-solution.js`. Antes de la clase, nunca.
+
 **Orden de las unidades: funciones (06) antes que vectores (07).** Cambio deliberado respecto
 de 2025, donde los vectores se dieron el `03-09` y las funciones el `10-09`. Consecuencias al
 generar material:
