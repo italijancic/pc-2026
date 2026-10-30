@@ -14,7 +14,7 @@
 | 01-10-2026 | [06](./unidades/06-funciones) | Funciones: parámetros, retorno, `Math.random()` | ✅ |
 | 08-10-2026 | [07](./unidades/07-arrays-unidimensionales) | Arrays unidimensionales (vectores) | ✅ |
 | 15-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-1.pdf) | Práctica integradora de vectores (1 de 2): aerogenerador | ✅ |
-| 29-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-2.pdf) | Práctica integradora de vectores (2 de 2): autoelevadores | 🟡 |
+| 29-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-2.pdf) | Práctica integradora de vectores (2 de 2): autoelevadores | ✅ |
 | 05-11-2026 | — | **1er Examen Parcial** | ⬜ |
 | 12-11-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | ⬜ |
 | 19-11-2026 | [09](./unidades/09-operaciones-matriciales) | Operaciones matriciales | ⬜ |
@@ -34,7 +34,8 @@
 
 > 📌 **No hubo clase el 22-10** (suspendida). La práctica de vectores 2 pasó al 29-10, el 1er
 > parcial al **05-11**, y todo lo que sigue se corrió una semana: el recuperatorio queda el
-> **10-12**.
+> **10-12**. El 29-10 se resolvió en clase la práctica 1; la práctica 2 quedó
+> como tarea, y su resolución se publica antes del parcial.
 
 > ⚠️ Las fechas de **parciales y recuperatorio** son tentativas: ajustar según calendario
 > académico y feriados. Las fechas de clase son los jueves consecutivos desde el inicio de
