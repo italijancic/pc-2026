@@ -16,7 +16,7 @@
 | 15-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-1.pdf) | Práctica integradora de vectores (1 de 2): aerogenerador | ✅ |
 | 29-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-2.pdf) | Práctica integradora de vectores (2 de 2): autoelevadores | ✅ |
 | 05-11-2026 | — | **1er Examen Parcial** | ⬜ |
-| 12-11-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | ⬜ |
+| 12-11-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | 🟡 |
 | 19-11-2026 | [09](./unidades/09-operaciones-matriciales) | Operaciones matriciales | ⬜ |
 | 26-11-2026 | [10](./unidades/10-integrador-ingenieria) | Integrador: problemas de ingeniería | ⬜ |
 | 03-12-2026 | — | **2do Examen Parcial** | ⬜ |
