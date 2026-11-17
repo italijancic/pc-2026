@@ -416,7 +416,7 @@ ejemplos, y cada ejemplo de salida sale de correr la solución de referencia con
 solución va al repo docente (`soluciones/NN-tema/practica-N-solution.js`).
 
 **Excepción, después de resolverla en clase:** se publica una versión para el alumno junto
-al enunciado (`practica-N-resuelta.js`), sin las notas del docente («dónde se va a trabar la
+al enunciado (`practica-N-resuelta.js`, o `tp-resuelto.js` para el TP de la unidad), sin las notas del docente («dónde se va a trabar la
 clase», verificación). El nombre no lleva `solution` ni `solucion` a propósito: el `.gitignore`
 bloquea `*-solution.js` y el chequeo previo al commit rechaza `solucion`. Antes de la clase, nunca.
 

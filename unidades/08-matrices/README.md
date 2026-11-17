@@ -28,6 +28,7 @@ vectores, así que todo lo de la unidad 07 se aplica acá **dos veces**.
 | [`apunte.md`](./apunte.pdf) | 📘 Apunte completo de teoría. Para estudiar y consultar. |
 | [`presentacion.md`](./presentacion.pdf) | 🖥️ Presentación vista en clase. |
 | [`tp.md`](./tp.pdf) | 📝 Trabajo Práctico: consumo de energía de un taller de mecanizado. |
+| [`tp-resuelto.js`](./tp-resuelto.js) | ✅ Una resolución posible del TP. Resolvelo vos primero y después comparalo. Usa `prompt()`: corre en el template del curso. |
 | [`ejemplos/`](./ejemplos) | 💻 Programas desarrollados en clase. |
 
 > 📋 **¿Querés copiar código de la presentación?** Desde el PDF se copia sin la sangría.
