@@ -243,3 +243,12 @@ a[href^='http']::after {
   color: var(--muted);
   border: none;
 }
+
+/* Un rótulo («Ejemplo de salida:», una consigna) no queda solo al pie de la
+   página: viaja con el bloque de código que lo sigue. */
+p:has(+ pre),
+li:has(+ pre),
+pre:has(+ pre) {
+  page-break-after: avoid;
+  break-after: avoid;
+}
