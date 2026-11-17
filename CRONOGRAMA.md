@@ -15,12 +15,11 @@
 | 08-10-2026 | [07](./unidades/07-arrays-unidimensionales) | Arrays unidimensionales (vectores) | ✅ |
 | 15-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-1.pdf) | Práctica integradora de vectores (1 de 2): aerogenerador | ✅ |
 | 29-10-2026 | [07](./unidades/07-arrays-unidimensionales/practica-2.pdf) | Práctica integradora de vectores (2 de 2): autoelevadores | ✅ |
-| 05-11-2026 | — | **1er Examen Parcial** | ⬜ |
+| 05-11-2026 | — | **1er Examen Parcial** | ✅ |
 | 12-11-2026 | [08](./unidades/08-matrices) | Matrices (arrays bidimensionales) | ✅ |
-| 19-11-2026 | [09](./unidades/09-operaciones-matriciales) | Operaciones matriciales | ⬜ |
-| 26-11-2026 | [10](./unidades/10-integrador-ingenieria) | Integrador: problemas de ingeniería | ⬜ |
-| 03-12-2026 | — | **2do Examen Parcial** | ⬜ |
-| 10-12-2026 | — | Recuperatorio | ⬜ |
+| 19-11-2026 | [08](./unidades/08-matrices/practica-1.pdf) | Práctica integradora de matrices: vibración de motores | ⬜ |
+| **mié** 25-11-2026 | — | **2do Examen Parcial** (matrices) | ⬜ |
+| a definir | — | Recuperatorio | ⬜ |
 
 **Referencia de estado:** ⬜ pendiente · 🟡 en preparación · ✅ dictada y publicada
 
@@ -36,6 +35,10 @@
 > parcial al **05-11**, y todo lo que sigue se corrió una semana: el recuperatorio queda el
 > **10-12**. El 29-10 se resolvió en clase la práctica 1; la práctica 2 quedó
 > como tarea, y su resolución se publica antes del parcial.
+
+> 📌 **El 2do parcial se adelantó al miércoles 25-11** y evalúa **sólo matrices** (unidad 08).
+> El 19-11 es la práctica integradora de matrices. Las unidades 09 (operaciones matriciales) y 10
+> (integrador) no se dictan antes del parcial. La fecha del recuperatorio está a definir.
 
 > ⚠️ Las fechas de **parciales y recuperatorio** son tentativas: ajustar según calendario
 > académico y feriados. Las fechas de clase son los jueves consecutivos desde el inicio de
